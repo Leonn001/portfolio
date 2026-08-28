@@ -155,48 +155,31 @@
     <div class="wrap">
       <header class="sec-head reveal">
         <span class="mono">Projetos</span>
-        <span class="mono sec-meta">6 registros</span>
+        <span class="mono sec-meta">4 registros</span>
       </header>
-      <h2 class="sec-title reveal">Outros sistemas, sites e ferramentas</h2>
-
-      <div class="filters reveal" role="group" aria-label="Filtrar projetos">
-        <button class="filter is-active" data-filter="all" type="button">Todos</button>
-        <button class="filter" data-filter="prod" type="button">Em produção</button>
-        <button class="filter" data-filter="grupo" type="button">Grupo Line</button>
-        <button class="filter" data-filter="pessoal" type="button">Pessoais</button>
-      </div>
+      <h2 class="sec-title reveal">Outros sistemas e ferramentas do Grupo Line</h2>
 
       <ul class="cards">
         <li class="card reveal" data-cat="prod grupo" style="--i:0">
           <div class="card-head"><span class="mono">DocLine</span><span class="chip chip-ok">No ar</span></div>
-          <p>Plataforma de documentos do grupo: gera contratos e termos em .docx a partir de modelos com cláusulas condicionais, com a UI organizada como o sumário do documento.</p>
+          <p>A plataforma de documentos do grupo. Contratos e termos que levavam uma tarde de copiar-e-colar saem em minutos, em .docx, a partir de modelos com cláusulas condicionais — a tela é organizada como o sumário do próprio documento, então quem preenche nunca se perde. Da ideia ao deploy em serverless, por mim.</p>
           <p class="mono card-stack">Node · Vercel · docx templating</p>
           <a class="card-link" href="https://docline-leonn001s-projects.vercel.app" target="_blank" rel="noopener">Abrir DocLine ↗</a>
         </li>
         <li class="card reveal" data-cat="grupo" style="--i:1">
           <div class="card-head"><span class="mono">LineFinance</span><span class="chip">Descontinuado</span></div>
-          <p>O sistema para o qual fui contratado no Grupo Line: financeiro com DRE por categoria e grupo de resultado. Foi descontinuado quando a empresa optou pelo Conta Azul — mas foi com ele que mostrei a capacidade de assumir o Linegestao.</p>
+          <p>O sistema para o qual fui contratado no Grupo Line: financeiro com DRE real por categoria e grupo de resultado, Angular zoneless e .NET. Foi descontinuado quando a empresa optou pelo Conta Azul — mas foi com ele que mostrei a capacidade de assumir o Linegestao.</p>
           <p class="mono card-stack">Angular · .NET · PostgreSQL</p>
         </li>
         <li class="card reveal" data-cat="grupo" style="--i:2">
           <div class="card-head"><span class="mono">Robô Reset</span><span class="chip chip-warn">Interno</span></div>
-          <p>Automação de reset de linhas em lote no portal da operadora. A ideia e o motor em Python são de <a href="https://www.linkedin.com/in/lucas-anjos-5a8a35143/" target="_blank" rel="noopener">Lucas Anjos</a>; construí o painel web para acompanhar, pausar e retomar cada lote.</p>
+          <p>Automação de reset de linhas em lote no portal da operadora — centenas de linhas por lote, sem ninguém clicando uma a uma. A ideia e o motor em Python são de <a href="https://www.linkedin.com/in/lucas-anjos-5a8a35143/" target="_blank" rel="noopener">Lucas Anjos</a>; construí o painel web que enfileira, acompanha, pausa e retoma cada lote com visibilidade para a operação.</p>
           <p class="mono card-stack">Python (motor) · painel web</p>
         </li>
         <li class="card reveal" data-cat="grupo" style="--i:3">
           <div class="card-head"><span class="mono">Vídeos em Remotion</span><span class="chip">Mídia</span></div>
-          <p>Posts animados para Line Móvel e Ingline, com narração TTS sincronizada palavra a palavra e renderização programática.</p>
+          <p>Posts animados para Line Móvel e Ingline feitos em código: narração TTS sincronizada palavra a palavra, cenas e transições em React, renderização programática. Trocar o texto regera o vídeo inteiro — sem editor, sem retrabalho.</p>
           <p class="mono card-stack">React · Remotion · TTS</p>
-        </li>
-        <li class="card reveal" data-cat="pessoal" style="--i:4">
-          <div class="card-head"><span class="mono">Knovi</span><span class="chip">SDD + MVP</span></div>
-          <p>SaaS multi-tenant onde colaboradores documentam conhecimento tácito (vídeos, PDFs, trilhas) e são recompensados por isso. Especificação completa e primeira fatia entregue.</p>
-          <p class="mono card-stack">Fastify · Next.js · Prisma · busca full-text</p>
-        </li>
-        <li class="card reveal" data-cat="pessoal" style="--i:5">
-          <div class="card-head"><span class="mono">TFD</span><span class="chip">SDD + demo</span></div>
-          <p>Sistema municipal de Tratamento Fora do Domicílio, white-label, com relatórios e seed de demonstração. Especificação em 8 seções antes da primeira linha de código.</p>
-          <p class="mono card-stack">NestJS · React · PostgreSQL</p>
         </li>
       </ul>
     </div>
@@ -217,8 +200,8 @@
           <p>Deploy com backup do que estava rodando, rollback em um comando, e leitura de log antes de qualquer "está lento". Sistema no ar é responsabilidade, não entrega.</p>
         </article>
         <article class="reveal" style="--i:1">
-          <h3>Reconcilio antes de confiar</h3>
-          <p>Planilha histórica, export editado à mão, dump de outro ambiente: tudo vira diff antes de virar verdade. Zeros à esquerda, fuso horário e identificadores que parecem números já me ensinaram o suficiente.</p>
+          <h3>Não confio em dado que não conferi</h3>
+          <p>Antes de qualquer número virar verdade num sistema — venha de planilha, de outro banco, de uma API ou de alguém que "tem certeza" — ele passa por conferência. Não é regra de um projeto, é como eu trabalho em qualquer um: conferir custa minutos; corrigir depois custa a confiança de quem usa.</p>
         </article>
         <article class="reveal" style="--i:2">
           <h3>Entrego o produto, não a feature</h3>
@@ -256,8 +239,13 @@
     <div class="wrap">
       <header class="sec-head reveal">
         <span class="mono">Trajetória</span>
-        <span class="mono sec-meta">3 experiências · 1 graduação</span>
+        <span class="mono sec-meta">Utinga, BA → Salvador, BA</span>
       </header>
+
+      <div class="origin reveal">
+        <p class="mono label">Origem</p>
+        <p>Fui criado em Utinga, no interior da Bahia. Desde criança fui entusiasta de tecnologia — o tipo que desmonta para entender e monta de volta para melhorar. Vim para Salvador atrás de um sonho com nome: me tornar engenheiro de software. A graduação, os primeiros freelances e a responsabilidade por sistemas em produção vieram nessa ordem, e cada uma delas foi um passo desse mesmo caminho.</p>
+      </div>
 
       <ol class="timeline">
         <li class="reveal" style="--i:0">
@@ -286,6 +274,13 @@
           <div>
             <h3>Bacharelado em Engenharia de Software · UCSal</h3>
             <p class="mono tl-courses">Cursos: Pentest Web (DESEC) · Spring Boot Essentials 2 e Maratona Java (DevDojo) · AWS Cloud Practitioner (UCSal)</p>
+          </div>
+        </li>
+        <li class="reveal tl-origin" style="--i:4">
+          <span class="mono tl-date">Antes de tudo</span>
+          <div>
+            <h3>Utinga, BA → Salvador, BA</h3>
+            <p>Um menino do interior curioso com computador, e a decisão de ir atrás da Engenharia de Software na capital.</p>
           </div>
         </li>
       </ol>
