@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leon Nascimento Moreira — Engenheiro de Software / Produto</title>
+  <meta name="description" content="Construo e opero sistemas inteiros — do banco ao deploy — para negócios que rodam com dados reais. Linegestao, DocLine, VEX e outros projetos. Salvador, BA.">
+  <meta property="og:title" content="Leon Nascimento Moreira — Engenheiro de Software / Produto">
+  <meta property="og:description" content="Sistemas inteiros, do banco ao deploy, para negócios que rodam com dados reais.">
+  <meta property="og:image" content="/assets/og.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#case">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <a class="brand" href="#inicio">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Leon N. Moreira</span>
+  </a>
+  <nav class="nav" aria-label="Seções">
+    <a href="#case">Case</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#metodo">Método</a>
+    <a href="#trajetoria">Trajetória</a>
+    <a href="#contato" class="nav-cta">Contato</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===================== HERO: o registro ===================== -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <p class="eyebrow mono">Registro · Titular</p>
+
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-name">Leon Nascimento<br>Moreira</h1>
+          <p class="hero-role">Engenheiro de Software / Produto</p>
+          <p class="hero-thesis">Construo e opero sistemas inteiros — do banco ao deploy — para negócios que rodam com dados reais.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+            <a class="btn" href="mailto:leon.moreira112@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">Falar comigo</a>
+          </div>
+        </div>
+
+        <figure class="hero-photo">
+          <picture>
+            <source srcset="/assets/foto.webp" type="image/webp">
+            <img src="/assets/foto.jpg" alt="Foto de Leon Nascimento Moreira" width="400" height="400">
+          </picture>
+          <figcaption class="mono">FOTO · CADASTRO</figcaption>
+        </figure>
+      </div>
+
+      <dl class="record" aria-label="Ficha resumida">
+        <div class="rec-field" style="--i:0"><dt>Status</dt><dd><span class="chip chip-ok">Em uso</span></dd></div>
+        <div class="rec-field" style="--i:1"><dt>Local</dt><dd>Salvador, BA</dd></div>
+        <div class="rec-field" style="--i:2"><dt>Desde</dt><dd>2024</dd></div>
+        <div class="rec-field" style="--i:3"><dt>Stack</dt><dd>.NET · Angular · Node · PostgreSQL</dd></div>
+        <div class="rec-field" style="--i:4"><dt>Formação</dt><dd>Eng. de Software · UCSal</dd></div>
+        <div class="rec-field rec-links" style="--i:5"><dt>Links</dt><dd>
+          <a href="https://github.com/Leonn001" target="_blank" rel="noopener">github.com/Leonn001</a>
+          <a href="https://www.linkedin.com/in/leon-nascimento-moreira-70a41b244/" target="_blank" rel="noopener">linkedin</a>
+          <a href="mailto:leon.moreira112@gmail.com">leon.moreira112@gmail.com</a>
+        </dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== CASE: Linegestao ===================== -->
+  <section class="sec" id="case">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <span class="mono">Case · Grupo Line</span>
+        <span class="mono sec-meta"><span class="chip chip-ok">Em produção</span> desde 2026</span>
+      </header>
+
+      <h2 class="sec-title reveal">Linegestao — a operação de uma operadora móvel fora das planilhas</h2>
+
+      <div class="case-grid">
+        <div class="case-col reveal" style="--i:0">
+          <h3 class="mono label">Problema</h3>
+          <p>A Line Móvel (MVNO do Grupo Line) controlava milhares de linhas, contas, planos e clientes em planilhas. Cada cadastro, troca de chip, bloqueio ou fatura era um ajuste manual — e cada ajuste, uma chance de divergência.</p>
+        </div>
+        <div class="case-col reveal" style="--i:1">
+          <h3 class="mono label">Solução</h3>
+          <p>Um sistema web feito e operado por uma pessoa: Angular no front, .NET com Entity Framework na API, PostgreSQL no banco, rodando em Linux com nginx e systemd. Regras de negócio da operadora modeladas no dado, não em quem lembra delas.</p>
+        </div>
+        <div class="case-col reveal" style="--i:2">
+          <h3 class="mono label">Meu papel</h3>
+          <p>Tudo: levantamento com a operação, modelo de dados, API, telas, importação das planilhas históricas, deploy, backup e rollback. As decisões técnicas e de produto passam por mim.</p>
+        </div>
+      </div>
+
+      <dl class="numbers reveal">
+        <div><dt class="mono">Linhas em produção</dt><dd>5.000<span class="plus">+</span></dd></div>
+        <div><dt class="mono">Divergências após reconciliação</dt><dd>0</dd></div>
+        <div><dt class="mono">Pessoas no time de engenharia</dt><dd>1</dd></div>
+        <div><dt class="mono">Módulos no ar</dt><dd>12</dd></div>
+      </dl>
+
+      <div class="shots">
+        <figure class="shot reveal" style="--i:0">
+          <img src="/assets/projetos/linegestao-dashboard.png" alt="Dashboard do Linegestao com KPIs por estado e status das linhas" loading="lazy" width="1440" height="900">
+          <figcaption class="mono">Dashboard · matriz estado × status</figcaption>
+        </figure>
+        <figure class="shot reveal" style="--i:1">
+          <img src="/assets/projetos/linegestao-geral.png" alt="Tela Geral do Linegestao com a lista de linhas e filtros" loading="lazy" width="1440" height="900">
+          <figcaption class="mono">Geral · linhas, filtros e histórico</figcaption>
+        </figure>
+        <figure class="shot reveal" style="--i:2">
+          <img src="/assets/projetos/linegestao-fatura.png" alt="Geração de fatura em PDF por cliente" loading="lazy" width="1440" height="900">
+          <figcaption class="mono">Faturamento · fatura em PDF</figcaption>
+        </figure>
+        <figure class="shot reveal" style="--i:3">
+          <img src="/assets/projetos/linegestao-consumo.png" alt="Histórico de consumo em GB por linha e por mês" loading="lazy" width="1440" height="900">
+          <figcaption class="mono">Consumo · GB por linha e por mês</figcaption>
+        </figure>
+      </div>
+
+      <div class="case-bottom">
+        <div class="reveal" style="--i:0">
+          <h3 class="mono label">O que ficou no ar</h3>
+          <ul class="list">
+            <li>Cadastro de linhas, contas, planos, clientes e usuários com auditoria de cada alteração</li>
+            <li>Importação e exportação de planilhas em massa, com reconciliação da base histórica</li>
+            <li>Dashboard de KPIs: matriz estado × status, custos em R$ e serviços adicionais</li>
+            <li>Faturas em PDF por cliente, geradas como snapshot do período</li>
+            <li>Histórico de consumo (GB/mês) e dias de bloqueio por competência</li>
+            <li>Timeline por linha, etiquetas de chips, portabilidades, troca de número e de chip</li>
+            <li>Portal do cliente com integração ao CRM</li>
+          </ul>
+        </div>
+        <div class="reveal" style="--i:1">
+          <h3 class="mono label">Decisões que tomei</h3>
+          <ul class="list">
+            <li><strong>Invariantes no banco.</strong> Regras como "reserva não tem usuário" e "um plano por linha" viraram constraints e triggers — não checagens de tela.</li>
+            <li><strong>Reconciliar antes de confiar.</strong> Toda migração de planilha passou por diff número a número antes de virar verdade no sistema.</li>
+            <li><strong>Operar com rede.</strong> Rotina própria de deploy com backup do binário anterior e rollback em um comando; hardening de API depois de revisão de segurança.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJETOS ===================== -->
+  <section class="sec" id="projetos">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <span class="mono">Projetos</span>
+        <span class="mono sec-meta">8 registros</span>
+      </header>
+      <h2 class="sec-title reveal">Outros sistemas, sites e ferramentas</h2>
+
+      <div class="filters reveal" role="group" aria-label="Filtrar projetos">
+        <button class="filter is-active" data-filter="all" type="button">Todos</button>
+        <button class="filter" data-filter="prod" type="button">Em produção</button>
+        <button class="filter" data-filter="grupo" type="button">Grupo Line</button>
+        <button class="filter" data-filter="pessoal" type="button">Pessoais</button>
+      </div>
+
+      <ul class="cards">
+        <li class="card reveal" data-cat="prod grupo" style="--i:0">
+          <div class="card-head"><span class="mono">DocLine</span><span class="chip chip-ok">No ar</span></div>
+          <p>Plataforma de documentos do grupo: gera contratos e termos em .docx a partir de modelos com cláusulas condicionais, com a UI organizada como o sumário do documento.</p>
+          <p class="mono card-stack">Node · Vercel · docx templating</p>
+          <a class="card-link" href="https://docline-leonn001s-projects.vercel.app" target="_blank" rel="noopener">Abrir DocLine ↗</a>
+        </li>
+        <li class="card reveal" data-cat="grupo" style="--i:1">
+          <div class="card-head"><span class="mono">Robô Reset</span><span class="chip chip-warn">Interno</span></div>
+          <p>Automação de reset de linhas em lote no portal da operadora, com painel web para acompanhar, pausar e retomar cada lote.</p>
+          <p class="mono card-stack">Node · automação de browser · painel web</p>
+        </li>
+        <li class="card reveal" data-cat="grupo" style="--i:2">
+          <div class="card-head"><span class="mono">LineFinance</span><span class="chip chip-warn">Interno</span></div>
+          <p>Financeiro do grupo com DRE real por categoria e grupo de resultado, frontend Angular zoneless.</p>
+          <p class="mono card-stack">Angular · .NET · PostgreSQL</p>
+        </li>
+        <li class="card reveal" data-cat="prod grupo" style="--i:3">
+          <div class="card-head"><span class="mono">VEX Systems</span><span class="chip chip-ok">No ar</span></div>
+          <p>Site institucional e identidade visual: logos, mascote e criativos para redes. Do briefing ao deploy.</p>
+          <p class="mono card-stack">HTML/CSS · design · Vercel</p>
+          <a class="card-link" href="https://vexsystems.vercel.app" target="_blank" rel="noopener">Abrir site ↗</a>
+        </li>
+        <li class="card reveal" data-cat="grupo" style="--i:4">
+          <div class="card-head"><span class="mono">Vídeos em Remotion</span><span class="chip">Mídia</span></div>
+          <p>Posts animados para Line Móvel e Ingline, com narração TTS sincronizada palavra a palavra e renderização programática.</p>
+          <p class="mono card-stack">React · Remotion · TTS</p>
+        </li>
+        <li class="card reveal" data-cat="prod pessoal" style="--i:5">
+          <div class="card-head"><span class="mono">Emprestimos</span><span class="chip chip-ok">Em produção</span></div>
+          <p>Livro-caixa multi-tenant para gestão de empréstimos: juros simples, modalidades mensal e por dias corridos, sócios e cotas, estorno e relançamento.</p>
+          <p class="mono card-stack">Express · React · PostgreSQL · Vercel</p>
+        </li>
+        <li class="card reveal" data-cat="pessoal" style="--i:6">
+          <div class="card-head"><span class="mono">Knovi</span><span class="chip">SDD + MVP</span></div>
+          <p>SaaS multi-tenant onde colaboradores documentam conhecimento tácito (vídeos, PDFs, trilhas) e são recompensados por isso. Especificação completa e primeira fatia entregue.</p>
+          <p class="mono card-stack">Fastify · Next.js · Prisma · busca full-text</p>
+        </li>
+        <li class="card reveal" data-cat="pessoal" style="--i:7">
+          <div class="card-head"><span class="mono">TFD</span><span class="chip">SDD + demo</span></div>
+          <p>Sistema municipal de Tratamento Fora do Domicílio, white-label, com relatórios e seed de demonstração. Especificação em 8 seções antes da primeira linha de código.</p>
+          <p class="mono card-stack">NestJS · React · PostgreSQL</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== MÉTODO ===================== -->
+  <section class="sec sec-alt" id="metodo">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <span class="mono">Método</span>
+        <span class="mono sec-meta">como eu trabalho</span>
+      </header>
+      <h2 class="sec-title reveal">O que dá para esperar de mim</h2>
+
+      <div class="method">
+        <article class="reveal" style="--i:0">
+          <h3>Opero em produção, com rede</h3>
+          <p>Deploy com backup do que estava rodando, rollback em um comando, e leitura de log antes de qualquer "está lento". Sistema no ar é responsabilidade, não entrega.</p>
+        </article>
+        <article class="reveal" style="--i:1">
+          <h3>Reconcilio antes de confiar</h3>
+          <p>Planilha histórica, export editado à mão, dump de outro ambiente: tudo vira diff antes de virar verdade. Zeros à esquerda, fuso horário e identificadores que parecem números já me ensinaram o suficiente.</p>
+        </article>
+        <article class="reveal" style="--i:2">
+          <h3>Entrego o produto, não a feature</h3>
+          <p>Regra de negócio, modelo de dados, API, tela, deploy — e quando precisa, o site, o vídeo e a identidade. O que interessa é o processo funcionando, não a parte que me coube.</p>
+        </article>
+        <article class="reveal" style="--i:3">
+          <h3>Uso IA como ferramenta de engenharia</h3>
+          <p>Agentes no fluxo diário para explorar, gerar e revisar — com especificação antes, teste depois, e armadilhas documentadas para não repetir.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STACK ===================== -->
+  <section class="sec" id="stack">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <span class="mono">Stack</span>
+        <span class="mono sec-meta">o que uso de verdade</span>
+      </header>
+
+      <dl class="stack">
+        <div class="reveal" style="--i:0"><dt class="mono">Linguagens</dt><dd>C#, TypeScript, JavaScript, Java, SQL, PHP</dd></div>
+        <div class="reveal" style="--i:1"><dt class="mono">Back-end</dt><dd>ASP.NET / .NET, Entity Framework, Node.js (Express, Fastify, NestJS), Spring Boot, APIs REST, JWT</dd></div>
+        <div class="reveal" style="--i:2"><dt class="mono">Front-end</dt><dd>Angular, React, Next.js, HTML/CSS, Remotion</dd></div>
+        <div class="reveal" style="--i:3"><dt class="mono">Dados</dt><dd>PostgreSQL (migrations, triggers, auditoria), MySQL, Prisma, importação/exportação de planilhas</dd></div>
+        <div class="reveal" style="--i:4"><dt class="mono">Infra</dt><dd>Linux, nginx, systemd, Vercel, AWS (EC2, S3, RDS), Git, Chrome headless para PDF</dd></div>
+        <div class="reveal" style="--i:5"><dt class="mono">Segurança</dt><dd>Pentest web (DESEC), hardening de API: IDOR, validação de entrada, integridade referencial</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== TRAJETÓRIA ===================== -->
+  <section class="sec sec-alt" id="trajetoria">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <span class="mono">Trajetória</span>
+        <span class="mono sec-meta">3 experiências · 1 graduação</span>
+      </header>
+
+      <ol class="timeline">
+        <li class="reveal" style="--i:0">
+          <span class="mono tl-date">01/2026 — atual</span>
+          <div>
+            <h3>Desenvolvedor Full-Stack · Grupo Line (InglineSystems)</h3>
+            <p>Responsável ponta a ponta pelo Linegestao e pelos demais sistemas internos do grupo: requisitos, arquitetura, back, front, banco e produção.</p>
+          </div>
+        </li>
+        <li class="reveal" style="--i:1">
+          <span class="mono tl-date">12/2025 — 01/2026</span>
+          <div>
+            <h3>Desenvolvedor Full-Stack · SeClick</h3>
+            <p>API REST com autenticação e interface em React/Node; deploy em produção na Cloudez.</p>
+          </div>
+        </li>
+        <li class="reveal" style="--i:2">
+          <span class="mono tl-date">07/2024 — 12/2024</span>
+          <div>
+            <h3>Desenvolvedor Full-Stack (freelance) · empresa de vistoria cautelar</h3>
+            <p>Front em PHP/JavaScript e endpoints em Java/Spring Boot; análise de requisitos direto com o cliente.</p>
+          </div>
+        </li>
+        <li class="reveal tl-edu" style="--i:3">
+          <span class="mono tl-date">2026</span>
+          <div>
+            <h3>Bacharelado em Engenharia de Software · UCSal</h3>
+            <p class="mono tl-courses">Cursos: Pentest Web (DESEC) · Spring Boot Essentials 2 e Maratona Java (DevDojo) · AWS Cloud Practitioner (UCSal)</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO: dois públicos ===================== -->
+  <section class="sec" id="contato">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <span class="mono">Contato</span>
+        <span class="mono sec-meta">respondo em até 1 dia útil</span>
+      </header>
+
+      <div class="cta-grid">
+        <article class="cta reveal" style="--i:0">
+          <p class="mono label">Para empresas</p>
+          <h2>Tem um processo em planilha que precisa virar sistema?</h2>
+          <p>Conto como foi tirar uma operadora móvel das planilhas e o que faria no seu caso. Sem compromisso.</p>
+          <a class="btn btn-primary" href="mailto:leon.moreira112@gmail.com?subject=Projeto%3A%20%5Bnome%20da%20empresa%5D">Descrever o projeto</a>
+        </article>
+        <article class="cta reveal" style="--i:1">
+          <p class="mono label">Para recrutadores</p>
+          <h2>Procurando alguém que segura produção sozinho?</h2>
+          <p>Currículo em uma página, com o mesmo conteúdo deste site.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="/cv/leon-nascimento-moreira.pdf" download>Baixar CV (PDF)</a>
+            <a class="btn" href="https://www.linkedin.com/in/leon-nascimento-moreira-70a41b244/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <span class="mono">Leon Nascimento Moreira · Salvador, BA</span>
+    <nav class="foot-links" aria-label="Links">
+      <a href="mailto:leon.moreira112@gmail.com">leon.moreira112@gmail.com</a>
+      <a href="https://www.linkedin.com/in/leon-nascimento-moreira-70a41b244/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Leonn001" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

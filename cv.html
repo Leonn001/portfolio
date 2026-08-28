@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo — Leon Nascimento Moreira</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#14181A; --ink-2:#3B4245; --muted:#6B7377; --rule:#C7CDC2; --accent:#1F3AC0; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body {
+    font-family: "IBM Plex Sans", "Segoe UI", Calibri, Arial, sans-serif;
+    color: var(--ink);
+    font-size: 10.4pt;
+    line-height: 1.4;
+    background:#f2f2f2;
+  }
+  .page {
+    background:#fff;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 18px auto;
+    padding: 15mm 16mm 13mm 16mm;
+    box-shadow: 0 1px 8px rgba(0,0,0,.15);
+  }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 8.4pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  header h1 { font-size: 21pt; margin: 0 0 2px 0; letter-spacing: -.01em; line-height: 1.05; }
+  .role { font-size: 11pt; font-weight: 600; color: var(--accent); margin: 0 0 3px 0; }
+  .contact { font-size: 9.4pt; color: var(--ink-2); margin: 0 0 3px 0; }
+  .contact a { color: var(--ink-2); text-decoration: none; }
+  h2 { font-size: 9pt; font-family: "IBM Plex Mono", Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin: 13px 0 7px 0; font-weight: 500; }
+  p { margin: 0 0 5px 0; }
+  ul { margin: 3px 0 6px 0; padding-left: 15px; }
+  li { margin: 0 0 2.5px 0; }
+  .job { margin-bottom: 8px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .job-title { font-weight: 600; }
+  .job-company { font-weight: 400; color: var(--ink-2); }
+  .job-date { color: var(--muted); font-size: 9pt; white-space: nowrap; font-family: "IBM Plex Mono", Consolas, monospace; }
+  .skills p { margin: 0 0 3px 0; }
+  .skills strong { display:inline-block; min-width: 112px; font-weight: 600; }
+  .edu-line { display:flex; justify-content: space-between; gap: 12px; }
+  .course { margin-bottom: 4px; }
+  .course .c-title { font-weight: 600; }
+  .course .c-meta { color: var(--ink-2); font-size: 9.2pt; }
+  .projects p { margin: 0 0 4px 0; }
+  .projects strong { font-weight: 600; }
+  @media print {
+    body { background:#fff; font-size: 10.1pt; }
+    .page { width:auto; min-height:auto; margin:0; padding: 11mm 14mm; box-shadow:none; }
+    h2 { margin-top: 10px; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Leon Nascimento Moreira</h1>
+    <p class="role">Engenheiro de Software · Full-Stack (.NET · Angular · Node · PostgreSQL)</p>
+    <p class="contact">
+      Salvador, BA &nbsp;|&nbsp; (71) 9 8348-5255 &nbsp;|&nbsp;
+      <a href="mailto:leon.moreira112@gmail.com">leon.moreira112@gmail.com</a>
+    </p>
+    <p class="contact">
+      <a href="https://www.linkedin.com/in/leon-nascimento-moreira-70a41b244/">linkedin.com/in/leon-nascimento-moreira</a>
+      &nbsp;|&nbsp;
+      <a href="https://github.com/Leonn001">github.com/Leonn001</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Resumo</h2>
+    <p>
+      Engenheiro de software responsável ponta a ponta por sistemas em produção: levantamento com a operação,
+      modelo de dados, API, front-end, deploy e sustentação. Atualmente sustento sozinho o sistema de gestão de
+      linhas de uma operadora móvel virtual (5.000+ linhas), em C# (.NET) e Angular sobre PostgreSQL, além dos
+      demais sistemas internos do grupo. Vivência com Node.js (Express, Fastify, NestJS), React/Next.js e
+      Java (Spring Boot). Bacharel em Engenharia de Software. Foco em integridade de dados, regras de negócio
+      no banco e operação segura em produção.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experiência</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span><span class="job-title">Desenvolvedor Full-Stack</span> · <span class="job-company">Grupo Line (InglineSystems)</span></span>
+        <span class="job-date">01/2026 — atual</span>
+      </div>
+      <ul>
+        <li>Responsável end-to-end pelo <strong>Linegestao</strong>, sistema de gestão de linhas móveis da Line Móvel (MVNO): requisitos, arquitetura, back-end, front-end, banco e deploy em produção (Linux/nginx/systemd), atuando como único engenheiro.</li>
+        <li>Migração da operação de planilhas para o sistema: importação e reconciliação de bases com mais de 5.000 registros, chegando a zero divergências; invariantes de negócio implementadas como constraints e triggers no PostgreSQL.</li>
+        <li>Módulos entregues: dashboard de KPIs (matriz estado × status, custos), faturas em PDF por cliente, histórico de consumo e bloqueios por competência, timeline de auditoria por linha, portabilidades, etiquetas de chips, portal do cliente integrado ao CRM.</li>
+        <li>Rotina própria de deploy com backup e rollback; hardening de API após revisão de segurança (IDOR, validação de entrada, integridade referencial).</li>
+        <li>Outros sistemas do grupo: DocLine (geração de documentos .docx com cláusulas condicionais, Node/Vercel), LineFinance (DRE, Angular/.NET), Robô Reset (automação com painel web), site e identidade visual da VEX Systems, vídeos institucionais em Remotion.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span><span class="job-title">Desenvolvedor Full-Stack</span> · <span class="job-company">SeClick</span></span>
+        <span class="job-date">12/2025 — 01/2026</span>
+      </div>
+      <ul>
+        <li>API REST segura com autenticação e interface em React/Node.js; configuração de ambiente e deploy em produção na Cloudez.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span><span class="job-title">Desenvolvedor Full-Stack (freelance)</span> · <span class="job-company">empresa de vistoria cautelar</span></span>
+        <span class="job-date">07/2024 — 12/2024</span>
+      </div>
+      <ul>
+        <li>Front-end em PHP/JavaScript e endpoints REST em Java/Spring Boot; análise de requisitos direto com o cliente.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>Projetos próprios</h2>
+    <p><strong>Emprestimos</strong> — livro-caixa multi-tenant para gestão de empréstimos (juros, modalidades, sócios e cotas). Express + React + PostgreSQL, em produção.</p>
+    <p><strong>Knovi</strong> — SaaS multi-tenant de documentação de conhecimento tácito. Fastify + Next.js + Prisma; especificação completa e primeira fatia entregue.</p>
+    <p><strong>TFD</strong> — sistema municipal de Tratamento Fora do Domicílio, white-label. NestJS + React + PostgreSQL; SDD completo e demo.</p>
+  </section>
+
+  <section class="skills">
+    <h2>Competências técnicas</h2>
+    <p><strong>Linguagens</strong> C#, TypeScript, JavaScript, Java, SQL, PHP</p>
+    <p><strong>Back-end</strong> ASP.NET / .NET, Entity Framework, Node.js (Express, Fastify, NestJS), Spring Boot, APIs REST, JWT</p>
+    <p><strong>Front-end</strong> Angular, React, Next.js, HTML/CSS, Remotion</p>
+    <p><strong>Dados</strong> PostgreSQL (migrations, triggers, auditoria), MySQL, Prisma, JPA/Hibernate, importação/exportação de planilhas</p>
+    <p><strong>Infra</strong> Linux, nginx, systemd, Vercel, AWS (EC2, S3, RDS, VPC), Git, Chrome headless para PDF</p>
+    <p><strong>Segurança</strong> Pentest web (DESEC), hardening de API</p>
+    <p><strong>Idiomas</strong> Português (nativo), Inglês (leitura técnica)</p>
+  </section>
+
+  <section>
+    <h2>Formação</h2>
+    <div class="edu-line">
+      <span><strong>Bacharelado em Engenharia de Software</strong> · UCSal – Universidade Católica do Salvador</span>
+      <span class="job-date">2026</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cursos e certificações</h2>
+    <div class="course">
+      <div class="edu-line"><span class="c-title">Pentest Web</span><span class="job-date">DESEC Security</span></div>
+      <span class="c-meta">Exploração e pós-exploração de vulnerabilidades em aplicações web; base para o hardening das APIs em produção.</span>
+    </div>
+    <div class="course">
+      <div class="edu-line"><span class="c-title">Spring Boot Essentials 2</span><span class="job-date">DevDojo · 30h</span></div>
+      <span class="c-meta">APIs REST com Spring Boot, Spring MVC, Spring Data JPA e injeção de dependências.</span>
+    </div>
+    <div class="course">
+      <div class="edu-line"><span class="c-title">Maratona Java</span><span class="job-date">DevDojo · 60h</span></div>
+      <span class="c-meta">Fundamentos de Java, orientação a objetos, Collections, exceções, JDBC.</span>
+    </div>
+    <div class="course">
+      <div class="edu-line"><span class="c-title">AWS Cloud Practitioner Essentials</span><span class="job-date">UCSal · 8h</span></div>
+      <span class="c-meta">Fundamentos da nuvem AWS: EC2, S3, VPC, RDS, segurança e precificação.</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
