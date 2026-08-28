@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leon Nascimento Moreira — Engenheiro de Software / Produto</title>
-  <meta name="description" content="Construo e opero sistemas inteiros — do banco ao deploy — para negócios que rodam com dados reais. Linegestao, DocLine, VEX e outros projetos. Salvador, BA.">
+  <meta name="description" content="Construo e opero sistemas inteiros — do banco ao deploy — para negócios que rodam com dados reais. Linegestao, DocLine e outros projetos. Salvador, BA.">
   <meta property="og:title" content="Leon Nascimento Moreira — Engenheiro de Software / Produto">
   <meta property="og:description" content="Sistemas inteiros, do banco ao deploy, para negócios que rodam com dados reais.">
   <meta property="og:image" content="/assets/og.jpg">
@@ -89,23 +89,23 @@
       <div class="case-grid">
         <div class="case-col reveal" style="--i:0">
           <h3 class="mono label">Problema</h3>
-          <p>A Line Móvel (MVNO do Grupo Line) controlava milhares de linhas, contas, planos e clientes em planilhas. Cada cadastro, troca de chip, bloqueio ou fatura era um ajuste manual — e cada ajuste, uma chance de divergência.</p>
+          <p>Toda a operação da Line Móvel — milhares de linhas, contas, planos, clientes e chips — vivia em mais de quatro planilhas gigantes que só uma funcionária acessava e sabia operar. Cadastro, bloqueio, fatura, pergunta da diretoria: tudo passava por ela. A empresa dependia de uma pessoa e de um arquivo.</p>
         </div>
         <div class="case-col reveal" style="--i:1">
           <h3 class="mono label">Solução</h3>
-          <p>Um sistema web feito e operado por uma pessoa: Angular no front, .NET com Entity Framework na API, PostgreSQL no banco, rodando em Linux com nginx e systemd. Regras de negócio da operadora modeladas no dado, não em quem lembra delas.</p>
+          <p>Um sistema web com a regra da operadora modelada no dado, não em quem lembra dela: Angular no front, .NET com Entity Framework na API, PostgreSQL no banco, rodando em Linux com nginx e systemd. Vários usuários ao mesmo tempo, permissão por perfil, auditoria de cada alteração.</p>
         </div>
         <div class="case-col reveal" style="--i:2">
           <h3 class="mono label">Meu papel</h3>
-          <p>Tudo: levantamento com a operação, modelo de dados, API, telas, importação das planilhas históricas, deploy, backup e rollback. As decisões técnicas e de produto passam por mim.</p>
+          <p>O sistema foi iniciado por <a href="https://www.linkedin.com/in/eduardolopesx03/" target="_blank" rel="noopener">Eduardo Lopes</a>. Assumi em 2026 e desde então respondo sozinho por tudo: levantamento com a operação, modelo de dados, API, telas, importação das planilhas históricas, deploy, backup e rollback. As decisões técnicas e de produto passam por mim.</p>
         </div>
       </div>
 
       <dl class="numbers reveal">
         <div><dt class="mono">Linhas em produção</dt><dd>5.000<span class="plus">+</span></dd></div>
+        <div><dt class="mono">Planilhas aposentadas</dt><dd>4<span class="plus">+</span></dd></div>
         <div><dt class="mono">Divergências após reconciliação</dt><dd>0</dd></div>
         <div><dt class="mono">Pessoas no time de engenharia</dt><dd>1</dd></div>
-        <div><dt class="mono">Módulos no ar</dt><dd>12</dd></div>
       </dl>
 
       <div class="shots">
@@ -129,15 +129,13 @@
 
       <div class="case-bottom">
         <div class="reveal" style="--i:0">
-          <h3 class="mono label">O que ficou no ar</h3>
+          <h3 class="mono label">O que mudou na operação</h3>
           <ul class="list">
-            <li>Cadastro de linhas, contas, planos, clientes e usuários com auditoria de cada alteração</li>
-            <li>Importação e exportação de planilhas em massa, com reconciliação da base histórica</li>
-            <li>Dashboard de KPIs: matriz estado × status, custos em R$ e serviços adicionais</li>
-            <li>Faturas em PDF por cliente, geradas como snapshot do período</li>
-            <li>Histórico de consumo (GB/mês) e dias de bloqueio por competência</li>
-            <li>Timeline por linha, etiquetas de chips, portabilidades, troca de número e de chip</li>
-            <li>Portal do cliente com integração ao CRM</li>
+            <li><strong>A informação deixou de depender de uma pessoa.</strong> Quem tem permissão consulta e opera na hora — comercial, financeiro, suporte e diretoria, sem fila.</li>
+            <li><strong>Várias mãos ao mesmo tempo, sem se atropelar.</strong> Perfis de acesso, cada alteração registrada com autor e data, histórico completo por linha.</li>
+            <li><strong>O que era retrabalho virou botão.</strong> Fatura em PDF por cliente, dashboard de KPIs (estado × status, custos), consumo e bloqueios por competência, etiquetas de chips, portabilidades, troca de número e de chip.</li>
+            <li><strong>A base histórica entrou limpa.</strong> Importação e exportação em massa com reconciliação das planilhas antigas — e a operação passou a ser feita no sistema, não em cima dele.</li>
+            <li><strong>O cliente passou a se atender.</strong> Portal do cliente com integração ao CRM.</li>
           </ul>
         </div>
         <div class="reveal" style="--i:1">
@@ -157,7 +155,7 @@
     <div class="wrap">
       <header class="sec-head reveal">
         <span class="mono">Projetos</span>
-        <span class="mono sec-meta">8 registros</span>
+        <span class="mono sec-meta">6 registros</span>
       </header>
       <h2 class="sec-title reveal">Outros sistemas, sites e ferramentas</h2>
 
@@ -176,37 +174,26 @@
           <a class="card-link" href="https://docline-leonn001s-projects.vercel.app" target="_blank" rel="noopener">Abrir DocLine ↗</a>
         </li>
         <li class="card reveal" data-cat="grupo" style="--i:1">
-          <div class="card-head"><span class="mono">Robô Reset</span><span class="chip chip-warn">Interno</span></div>
-          <p>Automação de reset de linhas em lote no portal da operadora, com painel web para acompanhar, pausar e retomar cada lote.</p>
-          <p class="mono card-stack">Node · automação de browser · painel web</p>
-        </li>
-        <li class="card reveal" data-cat="grupo" style="--i:2">
-          <div class="card-head"><span class="mono">LineFinance</span><span class="chip chip-warn">Interno</span></div>
-          <p>Financeiro do grupo com DRE real por categoria e grupo de resultado, frontend Angular zoneless.</p>
+          <div class="card-head"><span class="mono">LineFinance</span><span class="chip">Descontinuado</span></div>
+          <p>O sistema para o qual fui contratado no Grupo Line: financeiro com DRE por categoria e grupo de resultado. Foi descontinuado quando a empresa optou pelo Conta Azul — mas foi com ele que mostrei a capacidade de assumir o Linegestao.</p>
           <p class="mono card-stack">Angular · .NET · PostgreSQL</p>
         </li>
-        <li class="card reveal" data-cat="prod grupo" style="--i:3">
-          <div class="card-head"><span class="mono">VEX Systems</span><span class="chip chip-ok">No ar</span></div>
-          <p>Site institucional e identidade visual: logos, mascote e criativos para redes. Do briefing ao deploy.</p>
-          <p class="mono card-stack">HTML/CSS · design · Vercel</p>
-          <a class="card-link" href="https://vexsystems.vercel.app" target="_blank" rel="noopener">Abrir site ↗</a>
+        <li class="card reveal" data-cat="grupo" style="--i:2">
+          <div class="card-head"><span class="mono">Robô Reset</span><span class="chip chip-warn">Interno</span></div>
+          <p>Automação de reset de linhas em lote no portal da operadora. A ideia e o motor em Python são de <a href="https://www.linkedin.com/in/lucas-anjos-5a8a35143/" target="_blank" rel="noopener">Lucas Anjos</a>; construí o painel web para acompanhar, pausar e retomar cada lote.</p>
+          <p class="mono card-stack">Python (motor) · painel web</p>
         </li>
-        <li class="card reveal" data-cat="grupo" style="--i:4">
+        <li class="card reveal" data-cat="grupo" style="--i:3">
           <div class="card-head"><span class="mono">Vídeos em Remotion</span><span class="chip">Mídia</span></div>
           <p>Posts animados para Line Móvel e Ingline, com narração TTS sincronizada palavra a palavra e renderização programática.</p>
           <p class="mono card-stack">React · Remotion · TTS</p>
         </li>
-        <li class="card reveal" data-cat="prod pessoal" style="--i:5">
-          <div class="card-head"><span class="mono">Emprestimos</span><span class="chip chip-ok">Em produção</span></div>
-          <p>Livro-caixa multi-tenant para gestão de empréstimos: juros simples, modalidades mensal e por dias corridos, sócios e cotas, estorno e relançamento.</p>
-          <p class="mono card-stack">Express · React · PostgreSQL · Vercel</p>
-        </li>
-        <li class="card reveal" data-cat="pessoal" style="--i:6">
+        <li class="card reveal" data-cat="pessoal" style="--i:4">
           <div class="card-head"><span class="mono">Knovi</span><span class="chip">SDD + MVP</span></div>
           <p>SaaS multi-tenant onde colaboradores documentam conhecimento tácito (vídeos, PDFs, trilhas) e são recompensados por isso. Especificação completa e primeira fatia entregue.</p>
           <p class="mono card-stack">Fastify · Next.js · Prisma · busca full-text</p>
         </li>
-        <li class="card reveal" data-cat="pessoal" style="--i:7">
+        <li class="card reveal" data-cat="pessoal" style="--i:5">
           <div class="card-head"><span class="mono">TFD</span><span class="chip">SDD + demo</span></div>
           <p>Sistema municipal de Tratamento Fora do Domicílio, white-label, com relatórios e seed de demonstração. Especificação em 8 seções antes da primeira linha de código.</p>
           <p class="mono card-stack">NestJS · React · PostgreSQL</p>
@@ -235,7 +222,7 @@
         </article>
         <article class="reveal" style="--i:2">
           <h3>Entrego o produto, não a feature</h3>
-          <p>Regra de negócio, modelo de dados, API, tela, deploy — e quando precisa, o site, o vídeo e a identidade. O que interessa é o processo funcionando, não a parte que me coube.</p>
+          <p>Regra de negócio, modelo de dados, API, tela, deploy — e quando precisa, o vídeo institucional. O que interessa é o processo funcionando, não a parte que me coube.</p>
         </article>
         <article class="reveal" style="--i:3">
           <h3>Uso IA como ferramenta de engenharia</h3>
@@ -277,7 +264,7 @@
           <span class="mono tl-date">01/2026 — atual</span>
           <div>
             <h3>Desenvolvedor Full-Stack · Grupo Line (InglineSystems)</h3>
-            <p>Responsável ponta a ponta pelo Linegestao e pelos demais sistemas internos do grupo: requisitos, arquitetura, back, front, banco e produção.</p>
+            <p>Contratado para criar o LineFinance (financeiro/DRE). O projeto foi descontinuado quando a empresa optou pelo Conta Azul, mas foi com ele que mostrei capacidade para assumir o Linegestao — iniciado por Eduardo Lopes — e, desde então, respondo sozinho por ele e pelos demais sistemas internos do grupo: requisitos, arquitetura, back, front, banco e produção.</p>
           </div>
         </li>
         <li class="reveal" style="--i:1">
