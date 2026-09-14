@@ -27,11 +27,11 @@
     padding: 15mm 16mm 13mm 16mm;
     box-shadow: 0 1px 8px rgba(0,0,0,.15);
   }
-  .mono { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 8.4pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
   header h1 { font-size: 21pt; margin: 0 0 2px 0; letter-spacing: -.01em; line-height: 1.05; }
   .role { font-size: 11pt; font-weight: 600; color: var(--accent); margin: 0 0 3px 0; }
   .contact { font-size: 9.4pt; color: var(--ink-2); margin: 0 0 3px 0; }
   .contact a { color: var(--ink-2); text-decoration: none; }
+  .contact a.site { color: var(--accent); font-weight: 600; }
   h2 { font-size: 9pt; font-family: "IBM Plex Mono", Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin: 13px 0 7px 0; font-weight: 500; }
   p { margin: 0 0 5px 0; }
   ul { margin: 3px 0 6px 0; padding-left: 15px; }
@@ -46,19 +46,19 @@
   .edu-line { display:flex; justify-content: space-between; gap: 12px; }
   .course { margin-bottom: 4px; }
   .course .c-title { font-weight: 600; }
-  .course .c-meta { color: var(--ink-2); font-size: 9.2pt; }
-  .projects p { margin: 0 0 4px 0; }
-  .projects strong { font-weight: 600; }
+  .course .c-meta { color: var(--ink-2); font-size: 9.2pt; display:block; }
   @media print {
-    body { background:#fff; font-size: 9.3pt; line-height: 1.32; }
-    .page { width:auto; min-height:auto; margin:0; padding: 7mm 12mm 6mm; box-shadow:none; }
-    header h1 { font-size: 19pt; }
-    h2 { margin: 8px 0 5px 0; }
-    .job { margin-bottom: 5px; }
-    ul { margin: 2px 0 4px 0; }
-    li { margin-bottom: 1.5px; }
+    body { background:#fff; font-size: 9.1pt; line-height: 1.3; }
+    .page { width:auto; min-height:auto; margin:0; padding: 6mm 11mm 5mm; box-shadow:none; }
+    header h1 { font-size: 18pt; }
+    h2 { margin: 7px 0 4px 0; }
+    .job { margin-bottom: 4px; }
+    ul { margin: 2px 0 3px 0; }
+    li { margin-bottom: 1px; }
     .course { margin-bottom: 2px; }
-    .contact, .course .c-meta { font-size: 8.8pt; }
+    .contact, .course .c-meta { font-size: 8.6pt; }
+    a { color: inherit; }
+    .contact a.site { color: var(--accent); }
     @page { size: A4; margin: 0; }
   }
 </style>
@@ -74,6 +74,8 @@
       <a href="mailto:leon.moreira112@gmail.com">leon.moreira112@gmail.com</a>
     </p>
     <p class="contact">
+      Portfólio: <a class="site" href="https://leon-moreira.vercel.app">leon-moreira.vercel.app</a>
+      &nbsp;|&nbsp;
       <a href="https://www.linkedin.com/in/leon-nascimento-moreira-70a41b244/">linkedin.com/in/leon-nascimento-moreira</a>
       &nbsp;|&nbsp;
       <a href="https://github.com/Leonn001">github.com/Leonn001</a>
@@ -83,12 +85,12 @@
   <section>
     <h2>Resumo</h2>
     <p>
-      Engenheiro de software responsável ponta a ponta por sistemas em produção: levantamento com a operação,
-      modelo de dados, API, front-end, deploy e sustentação. Atualmente sustento sozinho o sistema de gestão de
-      linhas de uma operadora móvel virtual (5.000+ linhas), em C# (.NET) e Angular sobre PostgreSQL, além dos
-      demais sistemas internos do grupo. Vivência com Node.js (Express, Fastify, NestJS), React/Next.js e
-      Java (Spring Boot). Bacharel em Engenharia de Software. Foco em integridade de dados, regras de negócio
-      no banco e operação segura em produção.
+      Engenheiro de software com atuação ponta a ponta em sistemas em produção: levantamento com a operação,
+      modelo de dados, API, front-end, deploy e sustentação. Atualmente no desenvolvimento e na sustentação do
+      sistema de gestão de linhas de uma operadora móvel virtual (5.000+ linhas), em C# (.NET) e Angular sobre
+      PostgreSQL, e de outros sistemas internos do grupo. Vivência com Node.js (Express, Fastify, NestJS),
+      React/Next.js e Java (Spring Boot). Bacharel em Engenharia de Software. Foco em integridade de dados,
+      regras de negócio no banco e operação segura em produção.
     </p>
   </section>
 
@@ -101,12 +103,13 @@
         <span class="job-date">01/2026 — atual</span>
       </div>
       <ul>
-        <li>Contratado para criar o <strong>LineFinance</strong> (financeiro com DRE, Angular/.NET). Descontinuado pela opção da empresa pelo Conta Azul, foi com ele que demonstrei capacidade para assumir o Linegestao.</li>
-        <li>Responsável end-to-end pelo <strong>Linegestao</strong>, sistema de gestão de linhas móveis da Line Móvel (MVNO) iniciado por Eduardo Lopes: assumi como único engenheiro — requisitos, arquitetura, back-end, front-end, banco e deploy em produção (Linux/nginx/systemd).</li>
-        <li>Tirei a operação de mais de quatro planilhas que dependiam de uma única funcionária: importação e reconciliação de 5.000+ registros com zero divergências, invariantes de negócio como constraints e triggers no PostgreSQL, acesso simultâneo por perfil e auditoria de cada alteração.</li>
-        <li>Módulos entregues: dashboard de KPIs (matriz estado × status, custos), faturas em PDF por cliente, histórico de consumo e bloqueios por competência, timeline por linha, portabilidades, etiquetas de chips, portal do cliente integrado ao CRM.</li>
-        <li>Rotina própria de deploy com backup e rollback; hardening de API após revisão de segurança (IDOR, validação de entrada, integridade referencial).</li>
-        <li>Outros sistemas do grupo: DocLine (geração de documentos .docx com cláusulas condicionais, Node/Vercel), painel web do Robô Reset (motor em Python de Lucas Anjos), vídeos institucionais em Remotion.</li>
+        <li>Desenvolvimento e sustentação do <strong>Linegestao</strong>, sistema de gestão de mais de 5.000 linhas da Line Móvel: requisitos com a operação, arquitetura, back-end em C#/.NET, front-end em Angular, banco PostgreSQL e produção.</li>
+        <li>Migração de uma operação conduzida em planilhas para um sistema web multiusuário com controle de acesso por perfil e trilha de auditoria, permitindo que comercial, financeiro, suporte e diretoria consultem e operem a informação diretamente.</li>
+        <li>Importação, exportação e reconciliação em massa do histórico da operação (5.000+ registros), concluída sem divergências entre as planilhas originais e o banco.</li>
+        <li>Regras de negócio modeladas como constraints, índices únicos e triggers no PostgreSQL, preservando a integridade dos dados independentemente da tela ou do processo que os altera.</li>
+        <li>12 módulos em produção, entre eles dashboard de KPIs, faturas em PDF por cliente, histórico de consumo e bloqueios por competência, timeline por linha, portabilidades, etiquetas de chips e portal do cliente integrado ao CRM.</li>
+        <li>Rotina de deploy com backup e rollback (Linux, nginx, systemd) e reforço de segurança da API após revisão (IDOR, validação de entrada, integridade referencial).</li>
+        <li>Desenvolvimento do <strong>DocLine</strong>, plataforma em Node.js e React que gera contratos e documentos .docx a partir de modelos com cláusulas condicionais, e do painel web do Robô Reset, que enfileira e acompanha resets de linhas em lote.</li>
       </ul>
     </div>
 
@@ -131,15 +134,14 @@
     </div>
   </section>
 
-
   <section class="skills">
     <h2>Competências técnicas</h2>
     <p><strong>Linguagens</strong> C#, TypeScript, JavaScript, Java, SQL, PHP</p>
     <p><strong>Back-end</strong> ASP.NET / .NET, Entity Framework, Node.js (Express, Fastify, NestJS), Spring Boot, APIs REST, JWT</p>
-    <p><strong>Front-end</strong> Angular, React, Next.js, HTML/CSS, Remotion</p>
+    <p><strong>Front-end</strong> Angular, React, Next.js, HTML/CSS</p>
     <p><strong>Dados</strong> PostgreSQL (migrations, triggers, auditoria), MySQL, Prisma, JPA/Hibernate, importação/exportação de planilhas</p>
     <p><strong>Infra</strong> Linux, nginx, systemd, Vercel, AWS (EC2, S3, RDS, VPC), Git, Chrome headless para PDF</p>
-    <p><strong>Segurança</strong> Pentest web (DESEC), hardening de API</p>
+    <p><strong>Segurança</strong> Pentest web (metodologia DESEC / OWASP Top 10), hardening de API</p>
     <p><strong>Idiomas</strong> Português (nativo), Inglês (leitura técnica)</p>
   </section>
 
@@ -154,16 +156,20 @@
   <section>
     <h2>Cursos e certificações</h2>
     <div class="course">
-      <div class="edu-line"><span class="c-title">Pentest Web — exploração e pós-exploração de vulnerabilidades em aplicações web</span><span class="job-date">DESEC Security</span></div>
+      <div class="edu-line"><span class="c-title">Introdução ao Pentest na Prática (Pentest Web)</span><span class="job-date">DESEC Security · 07/2026</span></div>
+      <span class="c-meta">Pentest web black box com metodologia DESEC / OWASP Top 10: mapeamento de superfície (nmap, gobuster), força bruta (hydra, Burp Suite), SQL Injection e Blind SQLi (sqlmap), pós-exploração, falhas de autorização (LFI), RCE e escalação de privilégios; relatório, mitigação e reteste. Certificado HSHH-DMLEC-YIAB (desecsecurity.com).</span>
     </div>
     <div class="course">
       <div class="edu-line"><span class="c-title">Spring Boot Essentials 2</span><span class="job-date">DevDojo · 30h</span></div>
+      <span class="c-meta">Construção de APIs REST robustas e escaláveis com Spring Boot, Spring MVC e Spring Data JPA: injeção de dependências, validação, tratamento de exceções e integração com bancos de dados.</span>
     </div>
     <div class="course">
       <div class="edu-line"><span class="c-title">Maratona Java</span><span class="job-date">DevDojo · 60h</span></div>
+      <span class="c-meta">Fundamentos da linguagem e orientação a objetos, Collections Framework, tratamento de exceções, JDBC e boas práticas de código.</span>
     </div>
     <div class="course">
       <div class="edu-line"><span class="c-title">AWS Cloud Practitioner Essentials</span><span class="job-date">UCSal · 8h</span></div>
+      <span class="c-meta">Fundamentos da nuvem AWS: EC2, S3, VPC e RDS, modelo de responsabilidade compartilhada, segurança, conformidade e precificação.</span>
     </div>
   </section>
 
