@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leon Nascimento Moreira — Engenheiro de Software</title>
-  <meta name="description" content="Sistemas inteiros — do banco ao deploy — para negócios que rodam com dados reais. Linegestao, DocLine e outros projetos. Salvador, BA.">
+  <meta name="description" content="Engenheiro de software em Salvador, BA. Sistemas web para empresas, do banco de dados ao deploy. Linegestao, DocLine e outros projetos.">
   <meta property="og:title" content="Leon Nascimento Moreira — Engenheiro de Software">
-  <meta property="og:description" content="Sistemas inteiros, do banco ao deploy, para negócios que rodam com dados reais.">
+  <meta property="og:description" content="Sistemas web para empresas, do banco de dados ao deploy.">
   <meta property="og:image" content="/assets/og.jpg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
@@ -43,7 +43,7 @@
         <div class="hero-text">
           <h1 class="hero-name">Leon Nascimento<br>Moreira</h1>
           <p class="hero-role">Engenheiro de Software</p>
-          <p class="hero-thesis">Sistemas inteiros — do banco ao deploy — para negócios que rodam com dados reais.</p>
+          <p class="hero-thesis">Sistemas web para empresas, do banco de dados ao deploy.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projetos">Ver projetos</a>
             <a class="btn" href="mailto:leon.moreira112@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">Falar comigo</a>
@@ -81,20 +81,20 @@
         <span class="mono sec-meta"><span class="chip chip-ok">Em produção</span> desde 2026</span>
       </header>
 
-      <h2 class="sec-title reveal">Linegestao — a operação de uma operadora móvel fora das planilhas</h2>
+      <h2 class="sec-title reveal">Linegestao, a operação da Line Móvel fora das planilhas</h2>
 
       <div class="case-grid">
         <div class="case-col reveal" style="--i:0">
           <h3 class="mono label">Problema</h3>
-          <p>Toda a operação da Line Móvel — milhares de linhas, contas, planos, clientes e chips — vivia em mais de quatro planilhas gigantes que só uma funcionária acessava e sabia operar. Cadastro, bloqueio, fatura, pergunta da diretoria: tudo passava por ela. A empresa dependia de uma pessoa e de um arquivo.</p>
+          <p>A operação da Line Móvel, com milhares de linhas, contas, planos, clientes e chips, ficava em mais de quatro planilhas grandes, que só uma funcionária acessava e sabia usar. Cadastro, bloqueio, fatura, qualquer pergunta da diretoria: tudo passava por ela. Se ela não estivesse, a informação parava.</p>
         </div>
         <div class="case-col reveal" style="--i:1">
           <h3 class="mono label">Solução</h3>
-          <p>Um sistema web com a regra da operadora modelada no dado, não em quem lembra dela: Angular no front, .NET com Entity Framework na API, PostgreSQL no banco, rodando em Linux com nginx e systemd. Vários usuários ao mesmo tempo, permissão por perfil, auditoria de cada alteração.</p>
+          <p>Um sistema web em que as regras da operadora ficam no banco de dados, e não na memória de quem opera. Angular no front, .NET com Entity Framework na API, PostgreSQL no banco, rodando em Linux com nginx e systemd. Vários usuários ao mesmo tempo, permissão por perfil e registro de cada alteração.</p>
         </div>
         <div class="case-col reveal" style="--i:2">
           <h3 class="mono label">Meu papel</h3>
-          <p>O sistema foi iniciado por <a href="https://www.linkedin.com/in/eduardolopesx03/" target="_blank" rel="noopener">Eduardo Lopes</a>. Desde 2026 o desenvolvimento e a sustentação ficam comigo, em contato direto com a operação: levantamento, modelo de dados, API, telas, importação das planilhas históricas, deploy, backup e rollback.</p>
+          <p>O sistema foi iniciado por <a href="https://www.linkedin.com/in/eduardolopesx03/" target="_blank" rel="noopener">Eduardo Lopes</a>. Desde 2026 cuido do desenvolvimento e da sustentação, sempre em contato com a operação: levantamento, modelo de dados, API, telas, importação das planilhas antigas, deploy, backup e rollback.</p>
         </div>
       </div>
 
@@ -109,19 +109,19 @@
         <div class="reveal" style="--i:0">
           <h3 class="mono label">O que mudou na operação</h3>
           <ul class="list">
-            <li><strong>A informação deixou de depender de uma pessoa.</strong> Quem tem permissão consulta e opera na hora — comercial, financeiro, suporte e diretoria, sem fila.</li>
-            <li><strong>Várias mãos ao mesmo tempo, sem se atropelar.</strong> Perfis de acesso, cada alteração registrada com autor e data, histórico completo por linha.</li>
-            <li><strong>O que era retrabalho virou botão.</strong> Fatura em PDF por cliente, dashboard de KPIs (estado × status, custos), consumo e bloqueios por competência, etiquetas de chips, portabilidades, troca de número e de chip.</li>
-            <li><strong>A base histórica entrou limpa.</strong> Importação e exportação em massa com reconciliação das planilhas antigas — e a operação passou a ser feita no sistema, não em cima dele.</li>
-            <li><strong>O cliente passou a se atender.</strong> Portal do cliente com integração ao CRM.</li>
+            <li><strong>A informação não depende mais de uma pessoa.</strong> Quem tem permissão consulta e opera na hora: comercial, financeiro, suporte e diretoria.</li>
+            <li><strong>Várias pessoas trabalham ao mesmo tempo.</strong> Cada alteração fica registrada com autor e data, e cada linha tem seu histórico completo.</li>
+            <li><strong>Tarefas repetitivas viraram funções do sistema.</strong> Fatura em PDF por cliente, dashboard de indicadores, consumo e bloqueios por mês, etiquetas de chips, portabilidades, troca de número e de chip.</li>
+            <li><strong>A base histórica foi conferida antes de entrar.</strong> Importação e exportação em massa, com reconciliação das planilhas antigas.</li>
+            <li><strong>O cliente consulta por conta própria.</strong> Portal do cliente integrado ao CRM.</li>
           </ul>
         </div>
         <div class="reveal" style="--i:1">
           <h3 class="mono label">Decisões técnicas</h3>
           <ul class="list">
-            <li><strong>Invariantes no banco.</strong> Regras como "reserva não tem usuário" e "um plano por linha" viraram constraints e triggers — não checagens de tela.</li>
-            <li><strong>Reconciliar antes de confiar.</strong> Toda migração de planilha passou por diff número a número antes de virar verdade no sistema.</li>
-            <li><strong>Operar com rede.</strong> Rotina própria de deploy com backup do binário anterior e rollback em um comando; hardening de API depois de revisão de segurança.</li>
+            <li><strong>Regras no banco.</strong> Regras como "linha em reserva não tem usuário" e "um plano por linha" viraram constraints e triggers no PostgreSQL, em vez de validações só na tela.</li>
+            <li><strong>Conferência antes da migração.</strong> Cada planilha importada passou por uma comparação número a número com o banco antes de ser dada como certa.</li>
+            <li><strong>Deploy com segurança.</strong> A rotina de deploy guarda o binário anterior e permite voltar com um comando. A API também passou por uma revisão de segurança.</li>
           </ul>
         </div>
       </div>
@@ -141,23 +141,23 @@
 
       <ul class="cards">
         <li class="card reveal" data-cat="prod grupo" style="--i:0">
-          <div class="card-head"><span class="mono">DocLine</span><span class="chip chip-ok">No ar</span></div>
-          <p>A plataforma de documentos do grupo. Contratos e termos que levavam uma tarde de copiar-e-colar saem em minutos, em .docx, a partir de modelos com cláusulas condicionais — a tela é organizada como o sumário do próprio documento, então quem preenche nunca se perde.</p>
-          <p class="mono card-stack">Node · Vercel · docx templating</p>
+          <div class="card-head"><span class="mono">DocLine</span><span class="chip chip-ok">Em uso</span></div>
+          <p>Plataforma interna de documentos do grupo. Contratos e termos que antes levavam uma tarde de copiar e colar saem em poucos minutos, em .docx, a partir de modelos com cláusulas condicionais. A tela segue o sumário do próprio documento, o que facilita para quem preenche.</p>
+          <p class="mono card-stack">Node · React · geração de .docx</p>
         </li>
         <li class="card reveal" data-cat="grupo" style="--i:1">
           <div class="card-head"><span class="mono">LineFinance</span><span class="chip">Descontinuado</span></div>
-          <p>O primeiro sistema em que trabalhei no Grupo Line: financeiro com DRE real por categoria e grupo de resultado, Angular zoneless e .NET. Foi descontinuado quando a empresa optou pelo Conta Azul, e o trabalho seguiu para o Linegestao.</p>
+          <p>O primeiro sistema em que trabalhei no Grupo Line: financeiro com DRE por categoria e grupo de resultado, em Angular e .NET. Foi descontinuado quando a empresa optou pelo Conta Azul, e o trabalho seguiu para o Linegestao.</p>
           <p class="mono card-stack">Angular · .NET · PostgreSQL</p>
         </li>
         <li class="card reveal" data-cat="grupo" style="--i:2">
           <div class="card-head"><span class="mono">Robô Reset</span><span class="chip chip-warn">Interno</span></div>
-          <p>Automação de reset de linhas em lote no portal da operadora — centenas de linhas por lote, sem ninguém clicando uma a uma. A ideia e o motor em Python são de <a href="https://www.linkedin.com/in/lucas-anjos-5a8a35143/" target="_blank" rel="noopener">Lucas Anjos</a>; o painel web, que enfileira, acompanha, pausa e retoma cada lote com visibilidade para a operação, foi a minha parte.</p>
+          <p>Automação de reset de linhas em lote no portal da operadora, centenas por vez, sem precisar clicar uma a uma. A ideia e o motor em Python são de <a href="https://www.linkedin.com/in/lucas-anjos-5a8a35143/" target="_blank" rel="noopener">Lucas Anjos</a>. O painel web, que enfileira, acompanha, pausa e retoma cada lote, foi a parte que fiz.</p>
           <p class="mono card-stack">Python (motor) · painel web</p>
         </li>
         <li class="card reveal" data-cat="grupo" style="--i:3">
           <div class="card-head"><span class="mono">Vídeos em Remotion</span><span class="chip">Mídia</span></div>
-          <p>Posts animados para Line Móvel e Ingline feitos em código: narração TTS sincronizada palavra a palavra, cenas e transições em React, renderização programática. Trocar o texto regera o vídeo inteiro — sem editor, sem retrabalho.</p>
+          <p>Posts animados para a Line Móvel e a Ingline feitos em código: narração sincronizada palavra a palavra, cenas e transições em React, renderização automática. Basta trocar o texto para gerar o vídeo de novo.</p>
           <p class="mono card-stack">React · Remotion · TTS</p>
         </li>
       </ul>
@@ -175,20 +175,20 @@
 
       <div class="method">
         <article class="reveal" style="--i:0">
-          <h3>Produção com rede</h3>
-          <p>Deploy com backup do que estava rodando, rollback em um comando, e leitura de log antes de qualquer "está lento". Sistema no ar é responsabilidade, não entrega.</p>
+          <h3>Produção com cuidado</h3>
+          <p>Todo deploy guarda uma cópia do que estava rodando, e voltar atrás é um comando. Quando algo parece lento ou errado, olho o log antes de dar palpite.</p>
         </article>
         <article class="reveal" style="--i:1">
-          <h3>Dado conferido antes de virar verdade</h3>
-          <p>Antes de qualquer número entrar num sistema — venha de planilha, de outro banco, de uma API ou de alguém que "tem certeza" — ele passa por conferência. Vale para qualquer projeto: conferir custa minutos; corrigir depois custa a confiança de quem usa.</p>
+          <h3>Dados conferidos</h3>
+          <p>Antes de um número entrar no sistema, venha de planilha, de outro banco ou de uma API, ele é conferido. Conferir leva alguns minutos. Corrigir depois custa a confiança de quem usa.</p>
         </article>
         <article class="reveal" style="--i:2">
-          <h3>O produto, não a feature</h3>
-          <p>Regra de negócio, modelo de dados, API, tela, deploy — e quando precisa, o vídeo institucional. O que interessa é o processo funcionando, não uma parte isolada dele.</p>
+          <h3>O processo inteiro</h3>
+          <p>Regra de negócio, modelo de dados, API, tela e deploy. O que importa é o processo funcionando de ponta a ponta, e não só uma parte dele.</p>
         </article>
         <article class="reveal" style="--i:3">
-          <h3>IA como ferramenta de engenharia</h3>
-          <p>Agentes no fluxo diário para explorar, gerar e revisar — com especificação antes, teste depois, e armadilhas documentadas para não repetir.</p>
+          <h3>IA no dia a dia</h3>
+          <p>Uso agentes de IA para explorar código, gerar e revisar, sempre com a especificação escrita antes e testes depois. O que dá errado fica anotado para não se repetir.</p>
         </article>
       </div>
     </div>
@@ -199,7 +199,7 @@
     <div class="wrap">
       <header class="sec-head reveal">
         <span class="mono">Stack</span>
-        <span class="mono sec-meta">o que uso de verdade</span>
+        <span class="mono sec-meta">o que uso no dia a dia</span>
       </header>
 
       <dl class="stack">
@@ -222,7 +222,7 @@
       </header>
 
       <div class="origin reveal">
-        <p>Sou de Utinga, na Bahia, e vim para Salvador para cursar Engenharia de Software. Daí em diante foram a graduação, os primeiros freelances e, hoje, a responsabilidade por sistemas em produção.</p>
+        <p>Sou de Utinga, no interior da Bahia, e vim para Salvador para cursar Engenharia de Software. Desde então vieram a graduação, os primeiros freelances e, hoje, o trabalho com sistemas em produção.</p>
       </div>
 
       <ol class="timeline">
@@ -230,28 +230,28 @@
           <span class="mono tl-date">01/2026 — atual</span>
           <div>
             <h3>Desenvolvedor Full-Stack · Grupo Line (InglineSystems)</h3>
-            <p>Entrada pelo LineFinance (financeiro/DRE), descontinuado quando a empresa optou pelo Conta Azul. Em seguida, o Linegestao — iniciado por Eduardo Lopes — e os demais sistemas internos do grupo: requisitos, arquitetura, back, front, banco e produção.</p>
+            <p>Comecei pelo LineFinance (financeiro com DRE), descontinuado quando a empresa optou pelo Conta Azul. Depois vieram o Linegestao, iniciado por Eduardo Lopes, e os demais sistemas internos do grupo: requisitos, arquitetura, back-end, front-end, banco e produção.</p>
           </div>
         </li>
         <li class="reveal" style="--i:1">
           <span class="mono tl-date">12/2025 — 01/2026</span>
           <div>
             <h3>Desenvolvedor Full-Stack · SeClick</h3>
-            <p>API REST com autenticação e interface em React/Node; deploy em produção na Cloudez.</p>
+            <p>API REST com autenticação e interface em React e Node; deploy em produção na Cloudez.</p>
           </div>
         </li>
         <li class="reveal" style="--i:2">
           <span class="mono tl-date">07/2024 — 12/2024</span>
           <div>
             <h3>Desenvolvedor Full-Stack (freelance) · empresa de vistoria cautelar</h3>
-            <p>Front em PHP/JavaScript e endpoints em Java/Spring Boot; análise de requisitos direto com o cliente.</p>
+            <p>Front-end em PHP e JavaScript e endpoints em Java com Spring Boot; levantamento de requisitos direto com o cliente.</p>
           </div>
         </li>
         <li class="reveal tl-edu" style="--i:3">
           <span class="mono tl-date">2026</span>
           <div>
             <h3>Bacharelado em Engenharia de Software · UCSal</h3>
-            <p class="mono tl-courses">Cursos: Pentest Web (DESEC) · Spring Boot Essentials 2 e Maratona Java (DevDojo) · AWS Cloud Practitioner (UCSal)</p>
+            <p class="mono tl-courses">Cursos: Introdução ao Pentest na Prática (DESEC) · Spring Boot Essentials 2 e Maratona Java (DevDojo) · AWS Cloud Practitioner (UCSal)</p>
           </div>
         </li>
       </ol>
@@ -270,7 +270,7 @@
         <article class="cta reveal" style="--i:0">
           <p class="mono label">Para empresas</p>
           <h2>Tem um processo em planilha que precisa virar sistema?</h2>
-          <p>Conto como foi a saída das planilhas numa operadora móvel e o que faria sentido no seu caso. Sem compromisso.</p>
+          <p>Posso contar como foi a mudança na operadora móvel e pensar com você no que faria sentido no seu caso. Sem compromisso.</p>
           <div class="cta-actions">
             <a class="btn btn-primary" href="https://wa.me/5571983485255?text=Ol%C3%A1%20Leon%2C%20tenho%20um%20projeto%20para%20conversar" target="_blank" rel="noopener">Chamar no WhatsApp</a>
             <a class="btn" href="mailto:leon.moreira112@gmail.com?subject=Projeto%3A%20%5Bnome%20da%20empresa%5D">Enviar e-mail</a>
@@ -278,8 +278,8 @@
         </article>
         <article class="cta reveal" style="--i:1">
           <p class="mono label">Para recrutadores</p>
-          <h2>Procurando alguém para sistemas em produção?</h2>
-          <p>Currículo em uma página, com o mesmo conteúdo deste site.</p>
+          <h2>Procura alguém para cuidar de sistemas em produção?</h2>
+          <p>O currículo tem uma página, com o mesmo conteúdo deste site.</p>
           <div class="cta-actions">
             <a class="btn btn-primary" href="/cv/leon-nascimento-moreira.pdf" download>Baixar CV (PDF)</a>
             <a class="btn" href="https://www.linkedin.com/in/leon-nascimento-moreira-70a41b244/" target="_blank" rel="noopener">LinkedIn</a>
