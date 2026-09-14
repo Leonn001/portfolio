@@ -376,6 +376,8 @@ dl, dt, dd { margin: 0; }
 .card p { font-size: 15px; color: var(--ink-2); }
 .card-stack { margin-top: auto; text-transform: none; letter-spacing: 0; font-size: 12px; }
 .card-link { font-size: 14px; margin-top: 10px; text-decoration: none; font-weight: 500; }
+.case-link { margin: 32px 0 0; }
+.case-link .card-link { font-size: 15px; margin-top: 0; }
 .card-link:hover { text-decoration: underline; }
 
 /* ---------- MÉTODO ---------- */
