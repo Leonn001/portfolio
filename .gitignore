@@ -43,3 +43,8 @@ next-env.d.ts
 
 .vercel
 public/uploads/
+
+# criados pela integração do Neon
+.agents/
+.claude/
+skills-lock.json
