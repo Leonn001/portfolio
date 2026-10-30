@@ -14,6 +14,7 @@ export function Barra({ pendentes }: { pendentes?: number }) {
           <Link className="botao botao-pequeno" href="/admin/recomendacoes">
             Recomendações{pendentes ? <span className="chip chip-ponto chip-ambar" style={{ height: 20, marginLeft: 4 }}>{pendentes}</span> : null}
           </Link>
+          <Link className="botao botao-pequeno" href="/admin/certificados">Certificados</Link>
           <Link className="botao botao-pequeno" href="/" target="_blank">Ver site ↗</Link>
           <form action={sair}>
             <button className="botao botao-pequeno" type="submit">Sair</button>

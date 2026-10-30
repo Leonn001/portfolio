@@ -34,3 +34,13 @@ export function iniciais(nome: string): string {
   const ultima = partes.length > 1 ? partes[partes.length - 1][0] : '';
   return (primeira + ultima).toUpperCase();
 }
+
+/** "2026-03" -> "mar 2026" */
+export function mesAno(valor: string | null): string {
+  const m = valor?.match(/^(\d{4})-(\d{2})$/);
+  return m ? `${meses[Number(m[2]) - 1]} ${m[1]}` : '';
+}
+
+export function ehPdf(url: string | null): boolean {
+  return !!url && /\.pdf($|\?)/i.test(url);
+}

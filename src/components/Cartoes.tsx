@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import type { Certificado } from '@/lib/certificados';
 import type { PostResumo } from '@/lib/posts';
 import type { Recomendacao } from '@/lib/recomendacoes';
-import { dataCurta, iniciais } from '@/lib/texto';
+import { dataCurta, ehPdf, iniciais, mesAno } from '@/lib/texto';
 
 export function CartaoPost({ post, i = 0 }: { post: PostResumo; i?: number }) {
   return (
@@ -67,5 +68,44 @@ export function CartaoRecomendacao({ r, i = 0 }: { r: Recomendacao; i?: number }
         </span>
       </figcaption>
     </figure>
+  );
+}
+
+export function CartaoCertificado({ c, i = 0 }: { c: Certificado; i?: number }) {
+  const detalhes = [c.instituicao, mesAno(c.emitidoEm), c.cargaHoras ? `${c.cargaHoras}h` : ''].filter(Boolean).join(' · ');
+  const imagem = c.arquivoUrl && !ehPdf(c.arquivoUrl) ? c.arquivoUrl : null;
+  const conteudo = (
+    <>
+      <div className="certificado-capa">
+        {imagem ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={imagem} alt={`Certificado: ${c.titulo}`} loading="lazy" />
+        ) : (
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <circle cx="12" cy="9" r="5" />
+            <path d="M9 13.5 7.5 21l4.5-2.5 4.5 2.5-1.5-7.5" />
+          </svg>
+        )}
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 4, padding: '16px 18px 18px' }}>
+        <h3 style={{ margin: 0, fontSize: 16, lineHeight: 1.35 }}>{c.titulo}</h3>
+        <span className="mono" style={{ fontSize: 12, color: 'var(--texto-3)' }}>{detalhes}</span>
+        {c.arquivoUrl && <span className="link-seta" style={{ alignSelf: 'flex-start', marginTop: 8, fontSize: 13 }}>Ver certificado</span>}
+      </div>
+    </>
+  );
+  return (
+    <article className="cartao certificado surge" style={{ ['--i' as string]: i }}>
+      {c.arquivoUrl ? (
+        <a href={c.arquivoUrl} target="_blank" rel="noopener" style={{ display: 'block' }}>{conteudo}</a>
+      ) : (
+        conteudo
+      )}
+      {c.credencialUrl && (
+        <a href={c.credencialUrl} target="_blank" rel="noopener" className="mono" style={{ display: 'block', padding: '0 18px 16px', fontSize: 12, color: 'var(--texto-2)' }}>
+          Validar na instituição ↗
+        </a>
+      )}
+    </article>
   );
 }

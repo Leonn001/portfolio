@@ -2,7 +2,7 @@
 // Precisa do site rodando e do banco local. Uso:
 //   node scripts/e2e.mjs http://localhost:3100 "senha do admin"
 // Percorre: enviar recomendação → entrar no painel → publicar post → aprovar recomendação →
-// conferir que os dois aparecem no site → limpar o que criou.
+// cadastrar certificado → conferir tudo no site → limpar o que criou.
 import { spawn } from 'node:child_process';
 import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -121,17 +121,35 @@ await passo('aprova recomendação e ela aparece no mural', async () => {
   if (!(await texto()).includes(marca)) throw new Error('não apareceu no mural da página inicial');
 });
 
+await passo('cadastra certificado e ele aparece no mural', async () => {
+  await ir('/admin/certificados/novo');
+  await preencher('#titulo', `Certificado ${marca}`);
+  await preencher('#instituicao', 'Instituição Teste');
+  await preencher('#emitidoEm', '2026-03');
+  await preencher('#cargaHoras', '40');
+  await clicar('Salvar certificado');
+  await esperar(`location.pathname === '/admin/certificados'`, 'voltar à lista');
+  await ir('/');
+  const t = await texto();
+  if (!t.includes(`Certificado ${marca}`) || !t.includes('mar 2026')) throw new Error('não apareceu na página inicial');
+});
+
 await passo('upload recusa quem não está logado', async () => {
   const r = await fetch(`${base}/api/upload`, { method: 'POST', body: new FormData() });
   if (r.status !== 401) throw new Error(`status ${r.status}`);
 });
 
-await passo('limpa: exclui recomendação e post de teste', async () => {
+await passo('limpa: exclui recomendação, certificado e post de teste', async () => {
   await ir('/admin/recomendacoes');
   await avaliar(`
     const card = [...document.querySelectorAll('li')].find(li => li.innerText.includes(${JSON.stringify(marca)}));
     [...card.querySelectorAll('button')].find(b => b.textContent === 'Excluir').click();`);
   await sleep(2000);
+  await ir('/admin/certificados');
+  await avaliar(`[...document.querySelectorAll('a')].find(a => a.innerText.includes(${JSON.stringify(`Certificado ${marca}`)})).click()`);
+  await sleep(2000);
+  await avaliar(`window.confirm = () => true; [...document.querySelectorAll('button')].find(b => b.textContent === 'Excluir certificado').click()`);
+  await esperar(`location.pathname === '/admin/certificados'`, 'voltar à lista de certificados');
   await ir('/admin');
   await avaliar(`[...document.querySelectorAll('a')].find(a => a.innerText.includes(${JSON.stringify(`Post ${marca}`)})).click()`);
   await sleep(2000);

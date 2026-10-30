@@ -9,6 +9,7 @@ const itens = [
   { href: '/blog', texto: 'Blog' },
   { href: '/recomendacoes', texto: 'Recomendações' },
   { href: '/#trajetoria', texto: 'Trajetória' },
+  { href: '/#certificados', texto: 'Certificados' },
 ];
 
 export function Topo() {

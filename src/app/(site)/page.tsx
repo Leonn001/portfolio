@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { CartaoPost, CartaoRecomendacao } from '@/components/Cartoes';
+import { CartaoCertificado, CartaoPost, CartaoRecomendacao } from '@/components/Cartoes';
 import {
   caseLineGestao, lineAi, metodo, origem, perfil, projetos, stack, trajetoria,
 } from '@/conteudo/perfil';
+import { listarCertificados } from '@/lib/certificados';
 import { listarPublicados } from '@/lib/posts';
 import { listarAprovadas } from '@/lib/recomendacoes';
 
@@ -19,6 +20,7 @@ export default function Inicio() {
       <Blog />
       <Metodo />
       <StackETrajetoria />
+      <Certificados />
       <Contato />
     </>
   );
@@ -292,6 +294,21 @@ function StackETrajetoria() {
               </div>
             ))}
           </dl>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+async function Certificados() {
+  const certificados = await listarCertificados();
+  if (certificados.length === 0) return null;
+  return (
+    <section className="secao" id="certificados">
+      <div className="wrap">
+        <CabecaSecao rotulo="certificados" titulo="Cursos e certificações" />
+        <div className="grade-3">
+          {certificados.map((c, i) => <CartaoCertificado key={c.id} c={c} i={Math.min(i, 6)} />)}
         </div>
       </div>
     </section>

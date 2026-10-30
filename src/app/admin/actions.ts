@@ -4,11 +4,12 @@ import { updateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { sql } from '@/lib/db';
 import { passouDoLimite } from '@/lib/limite';
+import { TAG_CERTIFICADOS } from '@/lib/certificados';
 import { TAG_POSTS } from '@/lib/posts';
 import { TAG_RECOMENDACOES } from '@/lib/recomendacoes';
 import { senhaConfere } from '@/lib/senha';
 import { abrirSessao, exigirAdmin, fecharSessao, ipDaRequisicao } from '@/lib/sessao';
-import { errosPorCampo, postSchema } from '@/lib/validacao';
+import { certificadoSchema, errosPorCampo, postSchema } from '@/lib/validacao';
 
 // ---------- login ----------
 
@@ -95,4 +96,44 @@ export async function moderarRecomendacao(form: FormData): Promise<void> {
   }
   updateTag(TAG_RECOMENDACOES);
   redirect('/admin/recomendacoes');
+}
+
+// ---------- certificados ----------
+
+export type EstadoCertificado = { campos?: Record<string, string> };
+
+export async function salvarCertificado(_: EstadoCertificado, form: FormData): Promise<EstadoCertificado> {
+  await exigirAdmin();
+  const id = String(form.get('id') ?? '');
+  const resultado = certificadoSchema.safeParse({
+    titulo: form.get('titulo') ?? '',
+    instituicao: form.get('instituicao') ?? '',
+    emitidoEm: form.get('emitidoEm') ?? '',
+    cargaHoras: form.get('cargaHoras') ?? '',
+    arquivoUrl: form.get('arquivoUrl') ?? '',
+    credencialUrl: form.get('credencialUrl') ?? '',
+  });
+  if (!resultado.success) return { campos: errosPorCampo(resultado.error) };
+  const c = resultado.data;
+  const data = c.emitidoEm ? `${c.emitidoEm}-01` : null;
+
+  if (id) {
+    await sql`
+      update certificados set titulo = ${c.titulo}, instituicao = ${c.instituicao}, emitido_em = ${data},
+        carga_horas = ${c.cargaHoras}, arquivo_url = ${c.arquivoUrl}, credencial_url = ${c.credencialUrl}
+      where id::text = ${id}`;
+  } else {
+    await sql`
+      insert into certificados (titulo, instituicao, emitido_em, carga_horas, arquivo_url, credencial_url)
+      values (${c.titulo}, ${c.instituicao}, ${data}, ${c.cargaHoras}, ${c.arquivoUrl}, ${c.credencialUrl})`;
+  }
+  updateTag(TAG_CERTIFICADOS);
+  redirect('/admin/certificados');
+}
+
+export async function excluirCertificado(form: FormData): Promise<void> {
+  await exigirAdmin();
+  await sql`delete from certificados where id::text = ${String(form.get('id') ?? '')}`;
+  updateTag(TAG_CERTIFICADOS);
+  redirect('/admin/certificados');
 }

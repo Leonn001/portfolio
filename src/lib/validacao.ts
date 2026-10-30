@@ -48,6 +48,32 @@ export const postSchema = z.object({
 
 export type PostEntrada = z.infer<typeof postSchema>;
 
+const linkOpcional = z
+  .string()
+  .trim()
+  .max(500)
+  .transform(v => (v === '' ? null : v))
+  .refine(v => v === null || /^(https:\/\/|\/)/.test(v), { message: 'Use um link https.' });
+
+export const certificadoSchema = z.object({
+  titulo: z.string().trim().min(3, 'Escreva o nome do certificado.').max(140),
+  instituicao: z.string().trim().min(2, 'Escreva a instituição.').max(80),
+  emitidoEm: z
+    .string()
+    .trim()
+    .transform(v => (v === '' ? null : v))
+    .refine(v => v === null || /^\d{4}-(0[1-9]|1[0-2])$/.test(v), { message: 'Use mês e ano.' }),
+  cargaHoras: z
+    .string()
+    .trim()
+    .transform(v => (v === '' ? null : Number(v)))
+    .refine(v => v === null || (Number.isInteger(v) && v > 0 && v <= 2000), { message: 'Use um número de horas.' }),
+  arquivoUrl: linkOpcional,
+  credencialUrl: linkOpcional,
+});
+
+export type CertificadoEntrada = z.infer<typeof certificadoSchema>;
+
 /** Primeira mensagem de erro de cada campo, para mostrar no formulário. */
 export function errosPorCampo(erro: z.ZodError): Record<string, string> {
   const saida: Record<string, string> = {};

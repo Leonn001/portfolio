@@ -10,6 +10,7 @@ import { excluirPost, salvarPost, type EstadoPost } from '../../actions';
 async function enviarImagem(arquivo: File): Promise<string> {
   const dados = new FormData();
   dados.append('arquivo', arquivo);
+  dados.append('pasta', 'blog');
   const resp = await fetch('/api/upload', { method: 'POST', body: dados });
   const json = (await resp.json().catch(() => ({}))) as { url?: string; erro?: string };
   if (!resp.ok || !json.url) throw new Error(json.erro ?? 'Não consegui enviar a imagem.');
