@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CartaoPost, CartaoRecomendacao } from '@/components/Cartoes';
 import {
-  caseLineGestao, lineAi, metodo, numeros, origem, perfil, projetos, stack, trajetoria,
+  caseLineGestao, lineAi, metodo, origem, perfil, projetos, stack, trajetoria,
 } from '@/conteudo/perfil';
 import { listarPublicados } from '@/lib/posts';
 import { listarAprovadas } from '@/lib/recomendacoes';
@@ -11,8 +11,9 @@ export default function Inicio() {
   return (
     <>
       <Hero />
-      <LineAi />
+      <Sobre />
       <CaseLineGestao />
+      <LineAi />
       <Projetos />
       <Recomendacoes />
       <Blog />
@@ -29,7 +30,6 @@ function Hero() {
       <div className="wrap">
         <div className="hero">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-            <span className="chip chip-ponto surge" style={{ alignSelf: 'flex-start' }}>Novo em produção: LineAI</span>
             <h1 className="surge" style={{ ['--i' as string]: 1, fontSize: 'clamp(40px, 7vw, 72px)', lineHeight: 1.02, letterSpacing: '-0.045em', fontWeight: 700 }}>
               Leon Nascimento <span className="gradiente-texto">Moreira</span>
             </h1>
@@ -38,8 +38,7 @@ function Hero() {
             </p>
             <p className="surge" style={{ ['--i' as string]: 3, fontSize: 20, lineHeight: 1.5, maxWidth: 560 }}>{perfil.frase}</p>
             <div className="surge" style={{ ['--i' as string]: 4, display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 6 }}>
-              <Link className="botao botao-primario" href="/#lineai">Ver a LineAI</Link>
-              <a className="botao" href={perfil.cv} download>Baixar CV</a>
+              <a className="botao botao-primario" href={perfil.cv} download>Baixar CV</a>
               <a className="botao" href={perfil.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>
             </div>
           </div>
@@ -61,14 +60,20 @@ function Hero() {
           </div>
         </div>
 
-        <dl className="grade-4 numeros" style={{ marginTop: 72 }}>
-          {numeros.map((n, i) => (
-            <div key={n.rotulo} className="cartao surge" style={{ ['--i' as string]: i + 4, padding: 20 }}>
-              <dd className="gradiente-texto" style={{ fontSize: 34, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.1 }}>{n.valor}</dd>
-              <dt style={{ color: 'var(--texto-2)', fontSize: 14, marginTop: 6 }}>{n.rotulo}</dt>
-            </div>
-          ))}
-        </dl>
+      </div>
+    </section>
+  );
+}
+
+function Sobre() {
+  return (
+    <section className="secao" id="sobre" style={{ paddingTop: 24 }}>
+      <div className="wrap duas-colunas" style={{ alignItems: 'start' }}>
+        <CabecaSecao rotulo="sobre mim" titulo="Desenvolvedor de ponta a ponta" />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, fontSize: 17, color: 'var(--texto-2)' }}>
+          <p>{perfil.apresentacao}</p>
+          <p>{origem}</p>
+        </div>
       </div>
     </section>
   );
@@ -88,7 +93,7 @@ function LineAi() {
   return (
     <section className="secao" id="lineai">
       <div className="wrap">
-        <CabecaSecao rotulo="destaque · IA em produção" titulo={<>LineAI: a IA que trabalha <span className="gradiente-texto">dentro</span> do Line Gestão</>} subtitulo={lineAi.chamada} />
+        <CabecaSecao rotulo="projeto · IA aplicada" titulo={lineAi.titulo} subtitulo={lineAi.chamada} />
 
         <div className="lineai-grade">
           <div className="lineai-imagem">
@@ -106,18 +111,13 @@ function LineAi() {
         </div>
 
         <div className="grade-3" style={{ marginTop: 32 }}>
-          {lineAi.decisoes.map((d, i) => (
+          {lineAi.decisoes.slice(0, 3).map((d, i) => (
             <article key={d.titulo} className="cartao surge" style={{ ['--i' as string]: i }}>
               <span className="mono" style={{ fontSize: 12, color: 'var(--violeta)' }}>0{i + 1}</span>
               <h3 style={{ marginTop: 8 }}>{d.titulo}</h3>
               <p>{d.texto}</p>
             </article>
           ))}
-          <article className="cartao" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 10, background: 'linear-gradient(135deg, rgba(139,92,246,.16), rgba(79,107,255,.08))' }}>
-            <h3>Quer algo assim na sua operação?</h3>
-            <p>Conto como foi e penso com você no que faria sentido no seu caso.</p>
-            <Link href="/#contato" className="link-seta" style={{ alignSelf: 'flex-start', fontSize: 14 }}>Vamos conversar →</Link>
-          </article>
         </div>
       </div>
     </section>
@@ -271,7 +271,7 @@ function StackETrajetoria() {
     <section className="secao" id="trajetoria">
       <div className="wrap duas-colunas">
         <div>
-          <CabecaSecao rotulo="trajetória" titulo="De Utinga para sistemas em produção" subtitulo={origem} />
+          <CabecaSecao rotulo="trajetória" titulo="Minha trajetória" />
           <ol className="linha-tempo">
             {trajetoria.map(t => (
               <li key={t.titulo}>

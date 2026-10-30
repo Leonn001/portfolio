@@ -15,15 +15,8 @@ export const perfil = {
   cv: '/cv/leon-nascimento-moreira.pdf',
 };
 
-export const numeros = [
-  { valor: '5.000+', rotulo: 'linhas móveis geridas no Line Gestão' },
-  { valor: '1.500+', rotulo: 'testes automatizados rodando a cada push' },
-  { valor: '~2 min', rotulo: 'para subir uma versão, com backup e volta em 1 comando' },
-  { valor: '0', rotulo: 'divergências depois de migrar as planilhas antigas' },
-];
-
 export const lineAi = {
-  titulo: 'LineAI: a IA que trabalha dentro do Line Gestão',
+  titulo: 'LineAI: IA dentro do Line Gestão',
   chamada:
     'Um chat no canto da tela onde a equipe pergunta em português e a IA responde com os dados reais do sistema, ou já deixa a operação pronta para a pessoa só conferir.',
   exemplos: [
@@ -169,4 +162,4 @@ export const trajetoria = [
 ];
 
 export const origem =
-  'Sou de Utinga, no interior da Bahia, e vim para Salvador cursar Engenharia de Software. Dos primeiros freelances aos sistemas em produção que a equipe usa todo dia.';
+  'Sou de Utinga, no interior da Bahia, e vim para Salvador cursar Engenharia de Software. Comecei com freelances e hoje cuido de sistemas em produção usados todo dia.';

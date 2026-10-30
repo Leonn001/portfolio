@@ -5,8 +5,7 @@ import { useState } from 'react';
 import { perfil } from '@/conteudo/perfil';
 
 const itens = [
-  { href: '/#lineai', texto: 'LineAI' },
-  { href: '/#projetos', texto: 'Projetos' },
+  { href: '/#case', texto: 'Projetos' },
   { href: '/blog', texto: 'Blog' },
   { href: '/recomendacoes', texto: 'Recomendações' },
   { href: '/#trajetoria', texto: 'Trajetória' },

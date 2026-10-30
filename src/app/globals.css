@@ -242,6 +242,3 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 640px) { .contato { padding: 28px 22px; } }
 
-.numeros { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 960px) { .numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) { .numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .numeros dd { font-size: 26px !important; } .numeros > div { padding: 16px !important; } }
