@@ -3,7 +3,7 @@
 $root = Split-Path -Parent $PSScriptRoot
 $chrome = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 $src = Join-Path $root "cv.html"
-$out = Join-Path $root "cv\leon-nascimento-moreira.pdf"
+$out = Join-Path $root "public\cv\leon-nascimento-moreira.pdf"
 $udd = Join-Path $env:TEMP ("chrome-pdf-" + [guid]::NewGuid().ToString("N").Substring(0, 8))
 # Chrome headless aborta sem HOME/user-data-dir definidos (gotcha das faturas do Linegestao)
 if (-not $env:HOME) { $env:HOME = $env:USERPROFILE }
