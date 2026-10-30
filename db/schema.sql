@@ -49,3 +49,5 @@ create table if not exists certificados (
   criado_em     timestamptz not null default now()
 );
 create index if not exists certificados_data on certificados (emitido_em desc nulls last);
+
+alter table certificados add column if not exists logo_url text;

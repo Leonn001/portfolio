@@ -9,11 +9,12 @@ import { excluirCertificado, salvarCertificado, type EstadoCertificado } from '.
 export function FormCertificado({ certificado }: { certificado: Certificado | null }) {
   const [estado, salvar, salvando] = useActionState<EstadoCertificado, FormData>(salvarCertificado, {});
   const [arquivo, setArquivo] = useState(certificado?.arquivoUrl ?? '');
+  const [logo, setLogo] = useState(certificado?.logoUrl ?? '');
   const [enviando, setEnviando] = useState(false);
   const [erroArquivo, setErroArquivo] = useState('');
   const e = estado.campos ?? {};
 
-  async function enviar(f: File | undefined) {
+  async function enviar(f: File | undefined, destino: (url: string) => void = setArquivo) {
     if (!f) return;
     setErroArquivo('');
     setEnviando(true);
@@ -24,7 +25,7 @@ export function FormCertificado({ certificado }: { certificado: Certificado | nu
       const resp = await fetch('/api/upload', { method: 'POST', body: dados });
       const json = (await resp.json().catch(() => ({}))) as { url?: string; erro?: string };
       if (!resp.ok || !json.url) throw new Error(json.erro ?? 'Não consegui enviar o arquivo.');
-      setArquivo(json.url);
+      destino(json.url);
     } catch (err) {
       setErroArquivo(err instanceof Error ? err.message : 'Não consegui enviar o arquivo.');
     } finally {
@@ -40,6 +41,7 @@ export function FormCertificado({ certificado }: { certificado: Certificado | nu
       <form action={salvar} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
         <input type="hidden" name="id" value={certificado?.id ?? ''} />
         <input type="hidden" name="arquivoUrl" value={arquivo} />
+        <input type="hidden" name="logoUrl" value={logo} />
 
         <div className="campo">
           <label htmlFor="titulo">Nome do certificado</label>
@@ -89,8 +91,24 @@ export function FormCertificado({ certificado }: { certificado: Certificado | nu
         </div>
 
         <div className="campo">
-          <label htmlFor="credencialUrl">Link de validação (opcional)</label>
-          <input id="credencialUrl" name="credencialUrl" defaultValue={certificado?.credencialUrl ?? ''} placeholder="https://… página da instituição que confirma o certificado" />
+          <label>Logo da instituição (opcional)</label>
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <label className="botao botao-pequeno">
+              {logo ? 'Trocar logo' : 'Enviar logo'}
+              <input type="file" accept="image/png,image/jpeg,image/webp" hidden onChange={ev => enviar(ev.target.files?.[0], setLogo)} />
+            </label>
+            {logo && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={logo} alt="" style={{ height: 36, borderRadius: 6 }} />
+            )}
+            {logo && <button type="button" className="botao botao-pequeno" onClick={() => setLogo('')}>Remover</button>}
+          </div>
+          <span className="dica">Aparece no card quando não há imagem do certificado.</span>
+        </div>
+
+        <div className="campo">
+          <label htmlFor="credencialUrl">Link da instituição (opcional)</label>
+          <input id="credencialUrl" name="credencialUrl" defaultValue={certificado?.credencialUrl ?? ''} placeholder="https://… página para validar o certificado ou ver o curso" />
           {e.credencialUrl && <span className="erro">{e.credencialUrl}</span>}
         </div>
 

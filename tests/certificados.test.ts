@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { ehPdf, mesAno } from '@/lib/texto';
 import { certificadoSchema, errosPorCampo } from '@/lib/validacao';
 
-const base = { titulo: 'Introdução ao Pentest na Prática', instituicao: 'DESEC', emitidoEm: '', cargaHoras: '', arquivoUrl: '', credencialUrl: '' };
+const base = { titulo: 'Introdução ao Pentest na Prática', instituicao: 'DESEC', emitidoEm: '', cargaHoras: '', arquivoUrl: '', credencialUrl: '', logoUrl: '' };
 
 describe('certificadoSchema', () => {
   it('campos opcionais vazios viram null', () => {

@@ -80,6 +80,9 @@ export function CartaoCertificado({ c, i = 0 }: { c: Certificado; i?: number }) 
         {imagem ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={imagem} alt={`Certificado: ${c.titulo}`} loading="lazy" />
+        ) : c.logoUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={c.logoUrl} alt={c.instituicao} loading="lazy" className="certificado-logo" />
         ) : (
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="12" cy="9" r="5" />
@@ -103,7 +106,7 @@ export function CartaoCertificado({ c, i = 0 }: { c: Certificado; i?: number }) 
       )}
       {c.credencialUrl && (
         <a href={c.credencialUrl} target="_blank" rel="noopener" className="mono" style={{ display: 'block', padding: '0 18px 16px', fontSize: 12, color: 'var(--texto-2)' }}>
-          Validar na instituição ↗
+          Ver na instituição ↗
         </a>
       )}
     </article>

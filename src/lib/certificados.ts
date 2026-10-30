@@ -11,17 +11,19 @@ export type Certificado = {
   cargaHoras: number | null;
   arquivoUrl: string | null;
   credencialUrl: string | null;
+  /** Logo da instituição, mostrada quando não há imagem do certificado */
+  logoUrl: string | null;
 };
 
 type Linha = {
   id: string; titulo: string; instituicao: string; emitido_em: Date | null; carga_horas: number | null;
-  arquivo_url: string | null; credencial_url: string | null;
+  arquivo_url: string | null; credencial_url: string | null; logo_url: string | null;
 };
 
 const mapear = (l: Linha): Certificado => ({
   id: l.id, titulo: l.titulo, instituicao: l.instituicao,
   emitidoEm: l.emitido_em ? l.emitido_em.toISOString().slice(0, 7) : null,
-  cargaHoras: l.carga_horas, arquivoUrl: l.arquivo_url, credencialUrl: l.credencial_url,
+  cargaHoras: l.carga_horas, arquivoUrl: l.arquivo_url, credencialUrl: l.credencial_url, logoUrl: l.logo_url,
 });
 
 export const TAG_CERTIFICADOS = 'certificados';

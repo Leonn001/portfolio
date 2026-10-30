@@ -112,6 +112,7 @@ export async function salvarCertificado(_: EstadoCertificado, form: FormData): P
     cargaHoras: form.get('cargaHoras') ?? '',
     arquivoUrl: form.get('arquivoUrl') ?? '',
     credencialUrl: form.get('credencialUrl') ?? '',
+    logoUrl: form.get('logoUrl') ?? '',
   });
   if (!resultado.success) return { campos: errosPorCampo(resultado.error) };
   const c = resultado.data;
@@ -120,12 +121,13 @@ export async function salvarCertificado(_: EstadoCertificado, form: FormData): P
   if (id) {
     await sql`
       update certificados set titulo = ${c.titulo}, instituicao = ${c.instituicao}, emitido_em = ${data},
-        carga_horas = ${c.cargaHoras}, arquivo_url = ${c.arquivoUrl}, credencial_url = ${c.credencialUrl}
+        carga_horas = ${c.cargaHoras}, arquivo_url = ${c.arquivoUrl}, credencial_url = ${c.credencialUrl},
+        logo_url = ${c.logoUrl}
       where id::text = ${id}`;
   } else {
     await sql`
-      insert into certificados (titulo, instituicao, emitido_em, carga_horas, arquivo_url, credencial_url)
-      values (${c.titulo}, ${c.instituicao}, ${data}, ${c.cargaHoras}, ${c.arquivoUrl}, ${c.credencialUrl})`;
+      insert into certificados (titulo, instituicao, emitido_em, carga_horas, arquivo_url, credencial_url, logo_url)
+      values (${c.titulo}, ${c.instituicao}, ${data}, ${c.cargaHoras}, ${c.arquivoUrl}, ${c.credencialUrl}, ${c.logoUrl})`;
   }
   updateTag(TAG_CERTIFICADOS);
   redirect('/admin/certificados');

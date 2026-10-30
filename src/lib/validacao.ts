@@ -70,6 +70,7 @@ export const certificadoSchema = z.object({
     .refine(v => v === null || (Number.isInteger(v) && v > 0 && v <= 2000), { message: 'Use um número de horas.' }),
   arquivoUrl: linkOpcional,
   credencialUrl: linkOpcional,
+  logoUrl: linkOpcional,
 });
 
 export type CertificadoEntrada = z.infer<typeof certificadoSchema>;
