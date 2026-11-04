@@ -188,6 +188,7 @@ function Projetos() {
                     ))
                   : p.texto}
               </p>
+              {p.link && <a className="link-seta" href={p.link} target="_blank" rel="noopener">Ver o sistema</a>}
               <div className="tags" style={{ marginTop: 'auto' }}>{p.stack.map(s => <span key={s} className="tag">{s}</span>)}</div>
             </article>
           ))}

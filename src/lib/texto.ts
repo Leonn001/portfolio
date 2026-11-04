@@ -44,3 +44,6 @@ export function mesAno(valor: string | null): string {
 export function ehPdf(url: string | null): boolean {
   return !!url && /\.pdf($|\?)/i.test(url);
 }
+
+/** Identifica vídeo pela extensão, ignorando parâmetros da URL. */
+export const ehVideo = (url: string) => /\.(mp4|webm)(\?.*)?$/i.test(url);

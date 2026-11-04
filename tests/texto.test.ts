@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dataCurta, iniciais, minutosDeLeitura, slugify } from '@/lib/texto';
+import { dataCurta, ehVideo, iniciais, minutosDeLeitura, slugify } from '@/lib/texto';
 
 describe('slugify', () => {
   it('tira acento, maiúscula e símbolo', () => {
@@ -31,5 +31,14 @@ describe('iniciais', () => {
   it('primeira e última palavra', () => {
     expect(iniciais('Eduardo Lopes da Silva')).toBe('ES');
     expect(iniciais('lucas')).toBe('L');
+  });
+});
+
+describe('ehVideo', () => {
+  it('reconhece vídeo, com ou sem parâmetros, e não confunde com imagem', () => {
+    expect(ehVideo('https://x.test/tour.mp4')).toBe(true);
+    expect(ehVideo('/a/tour.WEBM?v=1')).toBe(true);
+    expect(ehVideo('https://x.test/print.png')).toBe(false);
+    expect(ehVideo('https://x.test/mp4.png')).toBe(false);
   });
 });

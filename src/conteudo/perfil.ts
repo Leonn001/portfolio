@@ -87,9 +87,17 @@ export const caseLineGestao = {
   stack: ['Angular', '.NET 10', 'Entity Framework', 'PostgreSQL', 'Docker', 'GitHub Actions', 'nginx'],
 };
 
-export type Projeto = { nome: string; status: string; texto: string; stack: string[]; credito?: { nome: string; link: string } };
+export type Projeto = { nome: string; status: string; texto: string; stack: string[]; credito?: { nome: string; link: string }; link?: string };
 
 export const projetos: Projeto[] = [
+  {
+    nome: 'Pentest Vault',
+    status: 'No ar',
+    texto:
+      'Plataforma que fiz para estudar o curso de Pentest da DESEC: caderno técnico, flashcards com revisão espaçada (FSRS), comandos buscados pelo objetivo e diário de laboratórios que vira writeup. Cada usuário só acessa os próprios dados, com regra no banco.',
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'FSRS'],
+    link: 'https://pentest-vault.vercel.app',
+  },
   {
     nome: 'Robô Reset',
     status: 'Em uso',
